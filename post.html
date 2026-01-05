@@ -30,21 +30,22 @@
     <article class="article card">
       <header class="article__header">
         <h2 id="postTitle" class="article__title">Loading…</h2>
+
+        <!-- Meta row incl. per-article views badge -->
         <div class="article__meta">
-  <span id="postDate" class="pill"></span>
-  <span id="postCategory" class="pill pill--ghost"></span>
+          <span id="postDate" class="pill"></span>
+          <span id="postCategory" class="pill pill--ghost"></span>
 
-  <!-- Per-article views badge -->
-  <a id="hitsLink"
-     class="pill pill--ghost"
-     href="#"
-     target="_blank"
-     rel="noopener"
-     style="display:inline-flex; align-items:center; gap:8px;">
-    <img id="hitsBadge" alt="Views" style="height:18px;" />
-  </a>
-</div>
-
+          <!-- Per-article views badge (hits.sh) -->
+          <a id="hitsLink"
+             class="pill pill--ghost"
+             href="#"
+             target="_blank"
+             rel="noopener"
+             style="display:inline-flex; align-items:center; gap:8px;">
+            <img id="hitsBadge" alt="Views" style="height:18px;" />
+          </a>
+        </div>
       </header>
 
       <div id="postBody" class="article__body">
@@ -61,25 +62,29 @@
 
     async function load() {
       const slug = getParam("slug");
-      // --- per-article views badge (hits.sh) ---
-// Unique key per article (based on slug)
-const hitKey = `hugomaier-danny-declassified-${slug}`;
 
-// Badge image increments the counter when loaded
-const badgeUrl = `https://hits.sh/${encodeURIComponent(hitKey)}.svg?style=flat&label=views`;
-
-// Stats page: same URL but replace ".svg" with "/"
-const statsUrl = `https://hits.sh/${encodeURIComponent(hitKey)}/`;
-
-document.getElementById("hitsBadge").src = badgeUrl;
-document.getElementById("hitsLink").href = statsUrl;
-
+      // If no slug, show friendly message and hide the counter badge
       if (!slug) {
         document.getElementById("postTitle").textContent = "Missing post slug.";
         document.getElementById("postBody").innerHTML = "<p class='muted'>Open a post from the home page.</p>";
+        document.getElementById("hitsLink").style.display = "none";
         return;
       }
 
+      // --- per-article views badge (hits.sh) ---
+      // hits.sh expects a URL-like identifier, so we use the real article URL:
+      const hitKey = `hugomaier.github.io/danny-declassified/posts/${slug}.html`;
+
+      // Badge increments the counter when loaded
+      const badgeUrl = `https://hits.sh/${encodeURI(hitKey)}.svg?style=flat&label=views`;
+
+      // Stats page (optional): same but ".svg" replaced by "/"
+      const statsUrl = `https://hits.sh/${encodeURI(hitKey)}/`;
+
+      document.getElementById("hitsBadge").src = badgeUrl;
+      document.getElementById("hitsLink").href = statsUrl;
+
+      // Load posts index
       const indexRes = await fetch("./posts/index.json", { cache: "no-store" });
       const posts = await indexRes.json();
       const post = posts.find(p => p.slug === slug);
@@ -95,6 +100,7 @@ document.getElementById("hitsLink").href = statsUrl;
       document.getElementById("postDate").textContent = post.date || "";
       document.getElementById("postCategory").textContent = post.category || "General";
 
+      // Load post body HTML
       const bodyRes = await fetch(`./posts/${post.slug}.html`, { cache: "no-store" });
       const html = await bodyRes.text();
       document.getElementById("postBody").innerHTML = html;
