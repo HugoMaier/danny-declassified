@@ -31,9 +31,20 @@
       <header class="article__header">
         <h2 id="postTitle" class="article__title">Loading…</h2>
         <div class="article__meta">
-          <span id="postDate" class="pill"></span>
-          <span id="postCategory" class="pill pill--ghost"></span>
-        </div>
+  <span id="postDate" class="pill"></span>
+  <span id="postCategory" class="pill pill--ghost"></span>
+
+  <!-- Per-article views badge -->
+  <a id="hitsLink"
+     class="pill pill--ghost"
+     href="#"
+     target="_blank"
+     rel="noopener"
+     style="display:inline-flex; align-items:center; gap:8px;">
+    <img id="hitsBadge" alt="Views" style="height:18px;" />
+  </a>
+</div>
+
       </header>
 
       <div id="postBody" class="article__body">
@@ -50,6 +61,19 @@
 
     async function load() {
       const slug = getParam("slug");
+      // --- per-article views badge (hits.sh) ---
+// Unique key per article (based on slug)
+const hitKey = `hugomaier-danny-declassified-${slug}`;
+
+// Badge image increments the counter when loaded
+const badgeUrl = `https://hits.sh/${encodeURIComponent(hitKey)}.svg?style=flat&label=views`;
+
+// Stats page: same URL but replace ".svg" with "/"
+const statsUrl = `https://hits.sh/${encodeURIComponent(hitKey)}/`;
+
+document.getElementById("hitsBadge").src = badgeUrl;
+document.getElementById("hitsLink").href = statsUrl;
+
       if (!slug) {
         document.getElementById("postTitle").textContent = "Missing post slug.";
         document.getElementById("postBody").innerHTML = "<p class='muted'>Open a post from the home page.</p>";
