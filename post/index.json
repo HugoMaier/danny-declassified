@@ -5,12 +5,10 @@
     "category": "General",
     "slug": "20260105-welcome-to-danny-declassified"
   },
-
-{
-  "title": "My Report (PDF)",
-  "date": "2026-01-05",
-  "category": "Reports",
-  "slug": "20260105-my-report"
-}
-
+  {
+    "title": "My Report (PDF)",
+    "date": "2026-01-05",
+    "category": "Reports",
+    "slug": "20260105-my-report"
+  }
 ]
