@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Publish — Danny Declassified</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap header-row">
+      <div class="brand">
+        <div class="brand__logo">DD</div>
+        <div>
+          <h1 class="brand__title">Publish (DOCX)</h1>
+          <p class="brand__tagline">Convert a DOCX into a post you can publish.</p>
+        </div>
+      </div>
+
+      <nav class="nav">
+        <a href="./index.html" class="nav__link">Home</a>
+        <a href="./admin.html" class="nav__link nav__link--active">Publish (DOCX)</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap layout">
+    <section class="main">
+      <div class="card">
+        <h2 class="card__title">1) Upload your DOCX</h2>
+
+        <div class="form">
+          <label class="label">DOCX file</label>
+          <input id="docxInput" type="file" accept=".docx" />
+
+          <div class="row">
+            <div class="col">
+              <label class="label">Title</label>
+              <input id="titleInput" class="input" placeholder="e.g. My first report" />
+            </div>
+            <div class="col">
+              <label class="label">Category</label>
+              <input id="categoryInput" class="input" placeholder="e.g. World, Tech, Local" />
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col">
+              <label class="label">Date (shown on post)</label>
+              <input id="dateInput" class="input" placeholder="e.g. 2026-01-05" />
+            </div>
+            <div class="col">
+              <label class="label">Slug (filename)</label>
+              <input id="slugInput" class="input" placeholder="auto-generated" />
+              <p class="muted small">This becomes <code>posts/&lt;slug&gt;.html</code></p>
+            </div>
+          </div>
+
+          <button id="convertBtn" class="btn" disabled>Convert DOCX → HTML</button>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2 class="card__title">2) Preview</h2>
+        <div id="preview" class="article__body muted">Upload a DOCX to preview it here.</div>
+      </div>
+
+      <div class="card">
+        <h2 class="card__title">3) Download the post + update index</h2>
+        <div class="row">
+          <button id="downloadPostBtn" class="btn" disabled>Download post HTML file</button>
+          <button id="copyIndexBtn" class="btn btn--ghost" disabled>Copy JSON snippet for posts/index.json</button>
+        </div>
+        <p class="muted small">
+          After downloading, move the HTML file into <code>posts/</code>, then add the JSON snippet into
+          <code>posts/index.json</code>, commit, push — and it’s published.
+        </p>
+        <pre id="jsonSnippet" class="code muted"></pre>
+      </div>
+    </section>
+
+    <aside class="sidebar">
+      <div class="card">
+        <h3 class="card__title">Important note</h3>
+        <p class="muted">
+          A purely static website can’t store uploads on a server automatically.
+          This page converts your DOCX in the browser, then you publish by committing the generated file.
+          (Later, if you want real uploads, you’ll add a backend.)
+        </p>
+      </div>
+    </aside>
+  </main>
+
+  <!-- Mammoth DOCX->HTML (client-side) -->
+  <script src="https://unpkg.com/mammoth/mammoth.browser.min.js"></script>
+
+  <script>
+    const docxInput = document.getElementById("docxInput");
+    const titleInput = document.getElementById("titleInput");
+    const categoryInput = document.getElementById("categoryInput");
+    const dateInput = document.getElementById("dateInput");
+    const slugInput = document.getElementById("slugInput");
+
+    const convertBtn = document.getElementById("convertBtn");
+    const downloadPostBtn = document.getElementById("downloadPostBtn");
+    const copyIndexBtn = document.getElementById("copyIndexBtn");
+
+    const preview = document.getElementById("preview");
+    const jsonSnippetEl = document.getElementById("jsonSnippet");
+
+    let lastHtml = "";
+
+    function slugify(s) {
+      return (s || "")
+        .toLowerCase()
+        .trim()
+        .replace(/[^a-z0-9]+/g, "-")
+        .replace(/^-+|-+$/g, "");
+    }
+
+    function refreshSlug() {
+      if (!slugInput.value.trim()) {
+        const base = slugify(titleInput.value) || "post";
+        const today = new Date().toISOString().slice(0,10).replaceAll("-", "");
+        slugInput.value = `${today}-${base}`;
+      }
+    }
+
+    function updateButtons() {
+      convertBtn.disabled = !(docxInput.files && docxInput.files[0]);
+    }
+
+    async function convert() {
+      const file = docxInput.files[0];
+      if (!file) return;
+
+      refreshSlug();
+
+      const arrayBuffer = await file.arrayBuffer();
+      const result = await mammoth.convertToHtml({ arrayBuffer });
+
+      // Basic cleanup
+      lastHtml = result.value
+        .replaceAll("<p></p>", "")
+        .trim();
+
+      preview.classList.remove("muted");
+      preview.innerHTML = lastHtml || "<p class='muted'>No content found in DOCX.</p>";
+
+      downloadPostBtn.disabled = !lastHtml;
+      copyIndexBtn.disabled = !lastHtml;
+
+      const snippet = {
+        title: titleInput.value || "Untitled",
+        date: dateInput.value || "",
+        category: categoryInput.value || "General",
+        slug: slugInput.value.trim()
+      };
+
+      jsonSnippetEl.textContent =
+`Add this object to posts/index.json (comma-separated):
+${JSON.stringify(snippet, null, 2)}`;
+    }
+
+    function downloadPost() {
+      const slug = slugInput.value.trim();
+      const blob = new Blob([lastHtml], { type: "text/html;charset=utf-8" });
+      const a = document.createElement("a");
+      a.href = URL.createObjectURL(blob);
+      a.download = `${slug}.html`;
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      URL.revokeObjectURL(a.href);
+    }
+
+    async function copySnippet() {
+      await navigator.clipboard.writeText(jsonSnippetEl.textContent);
+      copyIndexBtn.textContent = "Copied!";
+      setTimeout(() => (copyIndexBtn.textContent = "Copy JSON snippet for posts/index.json"), 1200);
+    }
+
+    docxInput.addEventListener("change", updateButtons);
+    titleInput.addEventListener("input", () => { slugInput.value = ""; });
+    convertBtn.addEventListener("click", () => convert().catch(err => alert(err)));
+    downloadPostBtn.addEventListener("click", downloadPost);
+    copyIndexBtn.addEventListener("click", () => copySnippet().catch(err => alert(err)));
+
+    updateButtons();
+  </script>
+</body>
+</html>

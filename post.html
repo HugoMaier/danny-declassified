@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Danny Declassified — Post</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap header-row">
+      <div class="brand">
+        <div class="brand__logo">DD</div>
+        <div>
+          <h1 class="brand__title">Danny Declassified</h1>
+          <p class="brand__tagline">News portal style — simple and fast.</p>
+        </div>
+      </div>
+
+      <nav class="nav">
+        <a href="./index.html" class="nav__link">Home</a>
+        <a href="./admin.html" class="nav__link">Publish (DOCX)</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap post">
+    <a class="back" href="./index.html">← Back to Home</a>
+
+    <article class="article card">
+      <header class="article__header">
+        <h2 id="postTitle" class="article__title">Loading…</h2>
+        <div class="article__meta">
+          <span id="postDate" class="pill"></span>
+          <span id="postCategory" class="pill pill--ghost"></span>
+        </div>
+      </header>
+
+      <div id="postBody" class="article__body">
+        <p class="muted">Loading post content…</p>
+      </div>
+    </article>
+  </main>
+
+  <script>
+    function getParam(name) {
+      const url = new URL(window.location.href);
+      return url.searchParams.get(name);
+    }
+
+    async function load() {
+      const slug = getParam("slug");
+      if (!slug) {
+        document.getElementById("postTitle").textContent = "Missing post slug.";
+        document.getElementById("postBody").innerHTML = "<p class='muted'>Open a post from the home page.</p>";
+        return;
+      }
+
+      const indexRes = await fetch("./posts/index.json", { cache: "no-store" });
+      const posts = await indexRes.json();
+      const post = posts.find(p => p.slug === slug);
+
+      if (!post) {
+        document.getElementById("postTitle").textContent = "Post not found.";
+        document.getElementById("postBody").innerHTML = "<p class='muted'>This post does not exist (yet).</p>";
+        return;
+      }
+
+      document.title = `Danny Declassified — ${post.title}`;
+      document.getElementById("postTitle").textContent = post.title;
+      document.getElementById("postDate").textContent = post.date || "";
+      document.getElementById("postCategory").textContent = post.category || "General";
+
+      const bodyRes = await fetch(`./posts/${post.slug}.html`, { cache: "no-store" });
+      const html = await bodyRes.text();
+      document.getElementById("postBody").innerHTML = html;
+    }
+
+    load().catch(err => {
+      document.getElementById("postTitle").textContent = "Error loading post.";
+      document.getElementById("postBody").innerHTML = `<pre>${String(err)}</pre>`;
+    });
+  </script>
+</body>
+</html>

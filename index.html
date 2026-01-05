@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Danny Declassified</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap header-row">
+      <div class="brand">
+        <div class="brand__logo">DD</div>
+        <div>
+          <h1 class="brand__title">Danny Declassified</h1>
+          <p class="brand__tagline">Reports, stories, and updates — published your way.</p>
+        </div>
+      </div>
+
+      <nav class="nav">
+        <a href="./index.html" class="nav__link nav__link--active">Home</a>
+        <a href="./admin.html" class="nav__link">Publish (DOCX)</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap layout">
+    <section class="main">
+      <div class="hero">
+        <div>
+          <h2 class="hero__title">Top Stories</h2>
+          <p class="hero__sub">Latest posts from Danny Declassified</p>
+        </div>
+        <div class="search">
+          <input id="searchInput" class="search__input" placeholder="Search posts…" />
+        </div>
+      </div>
+
+      <div id="postsGrid" class="grid"></div>
+      <p id="emptyState" class="muted hidden">No posts found.</p>
+    </section>
+
+    <aside class="sidebar">
+      <div class="card">
+        <h3 class="card__title">Trending</h3>
+        <ol id="trendingList" class="list"></ol>
+      </div>
+
+      <div class="card">
+        <h3 class="card__title">About</h3>
+        <p class="muted">
+          This is a lightweight news-style portal. You can publish DOCX files via the
+          “Publish (DOCX)” page.
+        </p>
+      </div>
+    </aside>
+  </main>
+
+  <footer class="wrap footer">
+    <span class="muted">© <span id="year"></span> Danny Declassified</span>
+  </footer>
+
+  <script src="./main.js"></script>
+</body>
+</html>
