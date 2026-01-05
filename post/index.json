@@ -7,16 +7,10 @@
   },
 
 {
-  "title": "My PDF Report",
+  "title": "My Report (PDF)",
   "date": "2026-01-05",
   "category": "Reports",
-  "slug": "my-pdf"
-},
-
-{
-  "title": "dannys_r",
-  "date": "2026-01-05",
-  "category": "World",
-  "slug": "dannys-r"
+  "slug": "20260105-my-report"
 }
+
 ]
