@@ -35,7 +35,6 @@ function postCard(post) {
       <p class="muted small">${escapeHtml(meta)}</p>
       ${excerptHtml}
     </div>
-    <p class="muted small">Open article →</p>
   `;
   return a;
 }

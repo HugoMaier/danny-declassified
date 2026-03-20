@@ -10,6 +10,8 @@
   <meta property="og:type"  content="article" />
   <meta property="og:title" content="Danny Declassified" />
   <meta property="og:url"   content="https://hugomaier.github.io/danny-declassified/post.html" />
+  <link rel="alternate" hreflang="de" href="https://hugomaier.github.io/danny-declassified/post.html" />
+  <link rel="alternate" hreflang="en" href="https://hugomaier.github.io/danny-declassified/en/post.html" />
 </head>
 <body>
   <header class="site-header">
@@ -30,7 +32,7 @@
   </header>
 
   <main class="wrap post">
-    <a class="back" href="./index.html">← Back to Home</a>
+    <a class="back" href="./index.html">← Zurück zur Übersicht</a>
 
     <article class="article card">
       <header class="article__header">
@@ -39,6 +41,7 @@
 
         <div class="article__meta">
           <span id="postMeta" class="muted small"></span>
+          <button id="shareBtn" class="share-btn" type="button">↗ Teilen</button>
         </div>
       </header>
 
@@ -167,6 +170,23 @@
     load().catch(err => {
       document.getElementById("postTitle").textContent = "Fehler beim Laden.";
       document.getElementById("postBody").innerHTML = `<pre>${String(err)}</pre>`;
+    });
+
+    // Share button
+    document.getElementById("shareBtn")?.addEventListener("click", async () => {
+      const btn = document.getElementById("shareBtn");
+      const url = window.location.href;
+      const title = document.getElementById("postTitle")?.textContent || "Danny Declassified";
+      try {
+        if (navigator.share) {
+          await navigator.share({ title, url });
+        } else {
+          await navigator.clipboard.writeText(url);
+          btn.textContent = "✓ Link kopiert";
+          btn.classList.add("share-btn--copied");
+          setTimeout(() => { btn.textContent = "↗ Teilen"; btn.classList.remove("share-btn--copied"); }, 1800);
+        }
+      } catch(e) { /* user cancelled */ }
     });
   </script>
 </body>

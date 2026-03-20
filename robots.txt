@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://hugomaier.github.io/danny-declassified/sitemap.xml

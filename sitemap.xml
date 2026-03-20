@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <!-- Main pages -->
+  <url>
+    <loc>https://hugomaier.github.io/danny-declassified/</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://hugomaier.github.io/danny-declassified/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hugomaier.github.io/danny-declassified/en/"/>
+    <lastmod>2026-03-20</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://hugomaier.github.io/danny-declassified/en/</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://hugomaier.github.io/danny-declassified/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hugomaier.github.io/danny-declassified/en/"/>
+    <lastmod>2026-03-20</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://hugomaier.github.io/danny-declassified/impressum.html</loc>
+    <lastmod>2026-03-20</lastmod>
+  </url>
+  <url>
+    <loc>https://hugomaier.github.io/danny-declassified/en/impressum.html</loc>
+    <lastmod>2026-03-20</lastmod>
+  </url>
+
+  <!-- German articles -->
+  <url>
+    <loc>https://hugomaier.github.io/danny-declassified/post.html?slug=20260320-moralisierung-distinktion-und-materielle-ungleichheit</loc>
+    <lastmod>2026-03-20</lastmod>
+  </url>
+  <url>
+    <loc>https://hugomaier.github.io/danny-declassified/post.html?slug=20260319-warum-der-kulturkampf-so-erbittert-werden-konnte</loc>
+    <lastmod>2026-03-19</lastmod>
+  </url>
+  <url>
+    <loc>https://hugomaier.github.io/danny-declassified/post.html?slug=20260318-die-europ-ische-sozialdemokratie-seit-2000-ffnung-soziale-sicherung-und-der-preis-ungleicher-globalisierung</loc>
+    <lastmod>2026-03-18</lastmod>
+  </url>
+  <url>
+    <loc>https://hugomaier.github.io/danny-declassified/post.html?slug=20260318-wie-deutschland-seine-gesellschaft-stabilisieren-und-strategisch-unabh-ngiger-werden-k-nnte</loc>
+    <lastmod>2026-03-18</lastmod>
+  </url>
+  <url>
+    <loc>https://hugomaier.github.io/danny-declassified/post.html?slug=20260318-fiktives-kriegsszenario-was-ein-gro-konflikt-mit-china-russland-und-iran-f-r-deutschland-und-die-eu-bedeuten-w-rde</loc>
+    <lastmod>2026-03-18</lastmod>
+  </url>
+  <url>
+    <loc>https://hugomaier.github.io/danny-declassified/post.html?slug=20260318-fl-chtlingskrise-konomischer-wandel-und-der-aufstieg-der-afd</loc>
+    <lastmod>2026-03-18</lastmod>
+  </url>
+  <url>
+    <loc>https://hugomaier.github.io/danny-declassified/post.html?slug=20260318-der-auftieg-der-afd-im-kontext-der-entwicklung-des-arbeits-und-des-wohnungsmarktes</loc>
+    <lastmod>2026-03-18</lastmod>
+  </url>
+  <url>
+    <loc>https://hugomaier.github.io/danny-declassified/post.html?slug=20260318-die-auswirkung-der-eu-osterweiterung-auf-arbeits-und-wohnungsmarkt</loc>
+    <lastmod>2026-03-18</lastmod>
+  </url>
+  <url>
+    <loc>https://hugomaier.github.io/danny-declassified/post.html?slug=20260318-die-auswirkung-der-globalisierung-auf-arbeits-und-wohnungsmarkt</loc>
+    <lastmod>2026-03-18</lastmod>
+  </url>
+  <url>
+    <loc>https://hugomaier.github.io/danny-declassified/post.html?slug=20260105-welcome-to-danny-declassified</loc>
+    <lastmod>2026-01-05</lastmod>
+  </url>
+
+  <!-- English articles -->
+  <url>
+    <loc>https://hugomaier.github.io/danny-declassified/en/post.html?slug=20260320-moralisierung-distinktion-und-materielle-ungleichheit</loc>
+    <lastmod>2026-03-20</lastmod>
+  </url>
+  <url>
+    <loc>https://hugomaier.github.io/danny-declassified/en/post.html?slug=20260319-warum-der-kulturkampf-so-erbittert-werden-konnte</loc>
+    <lastmod>2026-03-19</lastmod>
+  </url>
+  <url>
+    <loc>https://hugomaier.github.io/danny-declassified/en/post.html?slug=20260318-die-europ-ische-sozialdemokratie-seit-2000-ffnung-soziale-sicherung-und-der-preis-ungleicher-globalisierung</loc>
+    <lastmod>2026-03-18</lastmod>
+  </url>
+  <url>
+    <loc>https://hugomaier.github.io/danny-declassified/en/post.html?slug=20260318-wie-deutschland-seine-gesellschaft-stabilisieren-und-strategisch-unabh-ngiger-werden-k-nnte</loc>
+    <lastmod>2026-03-18</lastmod>
+  </url>
+  <url>
+    <loc>https://hugomaier.github.io/danny-declassified/en/post.html?slug=20260318-fiktives-kriegsszenario-was-ein-gro-konflikt-mit-china-russland-und-iran-f-r-deutschland-und-die-eu-bedeuten-w-rde</loc>
+    <lastmod>2026-03-18</lastmod>
+  </url>
+  <url>
+    <loc>https://hugomaier.github.io/danny-declassified/en/post.html?slug=20260318-fl-chtlingskrise-konomischer-wandel-und-der-aufstieg-der-afd</loc>
+    <lastmod>2026-03-18</lastmod>
+  </url>
+  <url>
+    <loc>https://hugomaier.github.io/danny-declassified/en/post.html?slug=20260318-der-auftieg-der-afd-im-kontext-der-entwicklung-des-arbeits-und-des-wohnungsmarktes</loc>
+    <lastmod>2026-03-18</lastmod>
+  </url>
+  <url>
+    <loc>https://hugomaier.github.io/danny-declassified/en/post.html?slug=20260318-die-auswirkung-der-eu-osterweiterung-auf-arbeits-und-wohnungsmarkt</loc>
+    <lastmod>2026-03-18</lastmod>
+  </url>
+  <url>
+    <loc>https://hugomaier.github.io/danny-declassified/en/post.html?slug=20260318-die-auswirkung-der-globalisierung-auf-arbeits-und-wohnungsmarkt</loc>
+    <lastmod>2026-03-18</lastmod>
+  </url>
+  <url>
+    <loc>https://hugomaier.github.io/danny-declassified/en/post.html?slug=20260105-welcome-to-danny-declassified</loc>
+    <lastmod>2026-01-05</lastmod>
+  </url>
+
+</urlset>
