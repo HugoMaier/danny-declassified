@@ -56,6 +56,29 @@
             </div>
           </div>
 
+          <div class="row">
+            <div class="col">
+              <label class="label">Subtitle <span class="muted">(optional)</span></label>
+              <input id="subtitleInput" class="input" placeholder="One-line teaser shown on the article page" />
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col">
+              <label class="label">Excerpt <span class="muted">(auto-generated — you can edit)</span></label>
+              <textarea id="excerptInput" class="input" rows="3" placeholder="Auto-filled after conversion…" style="resize:vertical;"></textarea>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col" style="max-width:200px;">
+              <label class="label">Read time <span class="muted">(auto-generated)</span></label>
+              <input id="readTimeInput" class="input" readonly
+                     style="color:var(--muted); cursor:default;"
+                     placeholder="Auto-filled after conversion…" />
+            </div>
+          </div>
+
           <button id="convertBtn" class="btn" disabled>Convert DOCX → HTML</button>
         </div>
       </div>
@@ -73,7 +96,7 @@
         </div>
         <p class="muted small">
           After downloading, move the HTML file into <code>posts/</code>, then add the JSON snippet into
-          <code>posts/index.json</code>, commit, push — and it’s published.
+          <code>posts/index.json</code>, commit, push — and it's published.
         </p>
         <pre id="jsonSnippet" class="code muted"></pre>
       </div>
@@ -83,32 +106,44 @@
       <div class="card">
         <h3 class="card__title">Important note</h3>
         <p class="muted">
-          A purely static website can’t store uploads on a server automatically.
+          A purely static website can't store uploads on a server automatically.
           This page converts your DOCX in the browser, then you publish by committing the generated file.
-          (Later, if you want real uploads, you’ll add a backend.)
+          (Later, if you want real uploads, you'll add a backend.)
         </p>
+      </div>
+      <div class="card">
+        <h3 class="card__title">Fields guide</h3>
+        <p class="muted small"><strong>Subtitle</strong> — optional teaser shown below the title on the article page.</p>
+        <p class="muted small"><strong>Excerpt</strong> — 1–2 sentences shown on homepage cards. Auto-generated, edit freely.</p>
+        <p class="muted small"><strong>Read time</strong> — estimated from word count (200 wpm). Auto-generated.</p>
       </div>
     </aside>
   </main>
 
-  <!-- Mammoth DOCX->HTML (client-side) -->
+  <!-- Mammoth DOCX→HTML (client-side) -->
   <script src="https://unpkg.com/mammoth/mammoth.browser.min.js"></script>
 
   <script>
-    const docxInput = document.getElementById("docxInput");
-    const titleInput = document.getElementById("titleInput");
+    const docxInput     = document.getElementById("docxInput");
+    const titleInput    = document.getElementById("titleInput");
     const categoryInput = document.getElementById("categoryInput");
-    const dateInput = document.getElementById("dateInput");
-    const slugInput = document.getElementById("slugInput");
+    const dateInput     = document.getElementById("dateInput");
+    const slugInput     = document.getElementById("slugInput");
+    const subtitleInput = document.getElementById("subtitleInput");
+    const excerptInput  = document.getElementById("excerptInput");
+    const readTimeInput = document.getElementById("readTimeInput");
 
-    const convertBtn = document.getElementById("convertBtn");
+    const convertBtn      = document.getElementById("convertBtn");
     const downloadPostBtn = document.getElementById("downloadPostBtn");
-    const copyIndexBtn = document.getElementById("copyIndexBtn");
+    const copyIndexBtn    = document.getElementById("copyIndexBtn");
 
-    const preview = document.getElementById("preview");
+    const preview       = document.getElementById("preview");
     const jsonSnippetEl = document.getElementById("jsonSnippet");
 
-    let lastHtml = "";
+    let lastHtml        = "";
+    let lastSnippetJson = "";
+
+    // ── Helpers ──────────────────────────────────────────────────────────────
 
     function slugify(s) {
       return (s || "")
@@ -118,16 +153,86 @@
         .replace(/^-+|-+$/g, "");
     }
 
+    /** Strip all HTML tags and collapse whitespace into single spaces. */
+    function stripHtml(html) {
+      return html.replace(/<[^>]*>/g, " ").replace(/\s+/g, " ").trim();
+    }
+
+    /**
+     * Extract a short editorial excerpt (~200 chars) from plain text.
+     * Prefers complete sentences; falls back to a hard cut if needed.
+     * Appends ellipsis only when truncation actually occurred.
+     */
+    function extractExcerpt(text, maxLen = 200) {
+      if (!text) return "";
+      // Split on sentence-ending punctuation followed by whitespace
+      const sentences = text.split(/(?<=[.!?])\s+/);
+      let result = "";
+      for (const s of sentences) {
+        const candidate = result ? result + " " + s : s;
+        if (candidate.length <= maxLen) {
+          result = candidate;
+        } else {
+          break;
+        }
+      }
+      // If no complete sentence fitted, hard-cut at word boundary
+      if (!result) {
+        result = text.slice(0, maxLen);
+        const lastSpace = result.lastIndexOf(" ");
+        if (lastSpace > maxLen * 0.7) result = result.slice(0, lastSpace);
+      }
+      if (result.length < text.length) result = result.replace(/[.,;]$/, "") + "…";
+      return result;
+    }
+
+    /**
+     * Estimate reading time at 200 wpm, minimum 1 minute.
+     * Returns formatted string like "5 min read", or "" if no text.
+     */
+    function estimateReadTime(text) {
+      if (!text) return "";
+      const words = text.trim().split(/\s+/).filter(Boolean).length;
+      if (!words) return "";
+      const mins = Math.max(1, Math.ceil(words / 200));
+      return `${mins} min read`;
+    }
+
+    // ── Core flow ─────────────────────────────────────────────────────────────
+
     function refreshSlug() {
       if (!slugInput.value.trim()) {
-        const base = slugify(titleInput.value) || "post";
-        const today = new Date().toISOString().slice(0,10).replaceAll("-", "");
+        const base  = slugify(titleInput.value) || "post";
+        const today = new Date().toISOString().slice(0, 10).replaceAll("-", "");
         slugInput.value = `${today}-${base}`;
       }
     }
 
     function updateButtons() {
       convertBtn.disabled = !(docxInput.files && docxInput.files[0]);
+    }
+
+    function buildSnippet() {
+      const snippet = {
+        title:    titleInput.value.trim()    || "Untitled",
+        date:     dateInput.value.trim()     || "",
+        category: categoryInput.value.trim() || "General",
+        slug:     slugInput.value.trim(),
+      };
+      const excerpt  = excerptInput.value.trim();
+      const readTime = readTimeInput.value.trim();
+      const subtitle = subtitleInput.value.trim();
+      if (excerpt)  snippet.excerpt  = excerpt;
+      if (readTime) snippet.readTime = readTime;
+      if (subtitle) snippet.subtitle = subtitle;
+      return snippet;
+    }
+
+    function refreshSnippet() {
+      const snippet   = buildSnippet();
+      lastSnippetJson = JSON.stringify(snippet, null, 2);
+      jsonSnippetEl.textContent =
+        `Add this object to posts/index.json (comma-separated):\n${lastSnippetJson}`;
     }
 
     async function convert() {
@@ -137,7 +242,7 @@
       refreshSlug();
 
       const arrayBuffer = await file.arrayBuffer();
-      const result = await mammoth.convertToHtml({ arrayBuffer });
+      const result      = await mammoth.convertToHtml({ arrayBuffer });
 
       // Basic cleanup
       lastHtml = result.value
@@ -148,25 +253,21 @@
       preview.innerHTML = lastHtml || "<p class='muted'>No content found in DOCX.</p>";
 
       downloadPostBtn.disabled = !lastHtml;
-      copyIndexBtn.disabled = !lastHtml;
+      copyIndexBtn.disabled    = !lastHtml;
 
-      const snippet = {
-        title: titleInput.value || "Untitled",
-        date: dateInput.value || "",
-        category: categoryInput.value || "General",
-        slug: slugInput.value.trim()
-      };
+      // Auto-fill excerpt and read time from the converted plain text
+      const plain = stripHtml(lastHtml);
+      excerptInput.value  = extractExcerpt(plain);
+      readTimeInput.value = estimateReadTime(plain);
 
-      jsonSnippetEl.textContent =
-`Add this object to posts/index.json (comma-separated):
-${JSON.stringify(snippet, null, 2)}`;
+      refreshSnippet();
     }
 
     function downloadPost() {
       const slug = slugInput.value.trim();
       const blob = new Blob([lastHtml], { type: "text/html;charset=utf-8" });
-      const a = document.createElement("a");
-      a.href = URL.createObjectURL(blob);
+      const a    = document.createElement("a");
+      a.href     = URL.createObjectURL(blob);
       a.download = `${slug}.html`;
       document.body.appendChild(a);
       a.click();
@@ -175,16 +276,26 @@ ${JSON.stringify(snippet, null, 2)}`;
     }
 
     async function copySnippet() {
-      await navigator.clipboard.writeText(jsonSnippetEl.textContent);
+      // Copy only the raw JSON — no instructional prefix
+      await navigator.clipboard.writeText(lastSnippetJson);
       copyIndexBtn.textContent = "Copied!";
       setTimeout(() => (copyIndexBtn.textContent = "Copy JSON snippet for posts/index.json"), 1200);
     }
 
-    docxInput.addEventListener("change", updateButtons);
-    titleInput.addEventListener("input", () => { slugInput.value = ""; });
-    convertBtn.addEventListener("click", () => convert().catch(err => alert(err)));
-    downloadPostBtn.addEventListener("click", downloadPost);
-    copyIndexBtn.addEventListener("click", () => copySnippet().catch(err => alert(err)));
+    // ── Event listeners ───────────────────────────────────────────────────────
+
+    docxInput.addEventListener("change",  updateButtons);
+    titleInput.addEventListener("input",  () => { slugInput.value = ""; });
+
+    // Live-refresh the JSON preview whenever any metadata field changes
+    [titleInput, categoryInput, dateInput, slugInput,
+     subtitleInput, excerptInput, readTimeInput].forEach(el => {
+      el.addEventListener("input", refreshSnippet);
+    });
+
+    convertBtn.addEventListener("click",      () => convert().catch(err => alert(err)));
+    downloadPostBtn.addEventListener("click",  downloadPost);
+    copyIndexBtn.addEventListener("click",    () => copySnippet().catch(err => alert(err)));
 
     updateButtons();
   </script>
