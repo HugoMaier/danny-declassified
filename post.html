@@ -105,7 +105,7 @@
 
       // Wire EN language-switch link now that a valid slug is confirmed
       const enLinkEl = document.getElementById("enLink");
-      if (enLinkEl) enLinkEl.href = `/en/post.html?slug=${encodeURIComponent(slug)}`;
+      if (enLinkEl) enLinkEl.href = `./en/post.html?slug=${encodeURIComponent(slug)}`;
 
       // --- per-article views badge (hits.sh) ---
       const hitKey = `hugomaier.github.io/danny-declassified/posts/${slug}.html`;

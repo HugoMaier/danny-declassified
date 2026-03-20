@@ -148,33 +148,35 @@
     ]
   },
   {
-    "title": "Germany's Quiet Social Turning Point, 1997–2006",
-    "date": "2026-03-20",
-    "category": "Germany",
-    "slug": "20260320-deutschlands-stille-soziale-wende-1997-2006",
-    "subtitle": "Housing, unemployment, privatization, and Agenda 2010 in the decade around the euro cash changeover",
-    "excerpt": "The years around the euro cash changeover changed Germany more quietly: a renter-majority society, the sale of public housing, high unemployment, and welfare reforms that tied security to conditionality.",
-    "readTime": "8 min read",
-    "themes": ["economic-pressure"],
-    "related": [
-      "20260318-die-auswirkung-der-globalisierung-auf-arbeits-und-wohnungsmarkt",
-      "20260318-die-europ-ische-sozialdemokratie-seit-2000-ffnung-soziale-sicherung-und-der-preis-ungleicher-globalisierung",
-      "20260320-deutschlands-ungleiche-wende"
-    ]
-  },
-  {
     "title": "Germany's Uneven Turn: East, West, and the Social Roots of the AfD",
-    "date": "2026-03-20",
+    "date": "2026-03-21",
     "category": "Germany",
     "slug": "20260320-deutschlands-ungleiche-wende",
     "subtitle": "The rise of the AfD as a cumulative process of material insecurity and representation deficit",
     "excerpt": "The AfD did not grow out of one grievance alone. Its rise was prepared by a longer social shift — and the East gave this politics its sharpest form.",
     "readTime": "9 min read",
+    "isNew": true,
     "themes": ["economic-pressure"],
     "related": [
       "20260318-der-auftieg-der-afd-im-kontext-der-entwicklung-des-arbeits-und-des-wohnungsmarktes",
       "20260318-fl-chtlingskrise-konomischer-wandel-und-der-aufstieg-der-afd",
       "20260320-deutschlands-stille-soziale-wende-1997-2006"
+    ]
+  },
+  {
+    "title": "Germany's Quiet Social Turning Point, 1997–2006",
+    "date": "2026-03-21",
+    "category": "Germany",
+    "slug": "20260320-deutschlands-stille-soziale-wende-1997-2006",
+    "subtitle": "Housing, unemployment, privatization, and Agenda 2010 in the decade around the euro cash changeover",
+    "excerpt": "The years around the euro cash changeover changed Germany more quietly: a renter-majority society, the sale of public housing, high unemployment, and welfare reforms that tied security to conditionality.",
+    "readTime": "8 min read",
+    "isNew": true,
+    "themes": ["economic-pressure"],
+    "related": [
+      "20260318-die-auswirkung-der-globalisierung-auf-arbeits-und-wohnungsmarkt",
+      "20260318-die-europ-ische-sozialdemokratie-seit-2000-ffnung-soziale-sicherung-und-der-preis-ungleicher-globalisierung",
+      "20260320-deutschlands-ungleiche-wende"
     ]
   }
 ]

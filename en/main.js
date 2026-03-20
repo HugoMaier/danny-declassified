@@ -32,7 +32,7 @@ async function loadPosts() {
 
 function postCard(post, size, isNew) {
   size = size || 'regular';
-  isNew = !!isNew;
+  isNew = !!isNew || !!post.isNew;
   const a = document.createElement("a");
   const cat = post.category || '';
   const cs = catSlug(cat);
