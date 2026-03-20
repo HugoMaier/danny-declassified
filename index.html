@@ -1,11 +1,13 @@
 <!doctype html>
 <html lang="de">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Danny Declassified</title>
   <link rel="stylesheet" href="./styles.css" />
 </head>
+
 <body>
   <header class="site-header">
     <div class="wrap header-row">
@@ -20,7 +22,8 @@
       <nav class="nav">
         <a href="./index.html" class="nav__link nav__link--active">Home</a>
         <a href="./admin.html" class="nav__link">Publish (DOCX)</a>
-        <span class="nav__lang"><a href="./index.html" class="nav__link nav__link--active nav__link--lang">DE</a><span class="nav__lang-sep">|</span><a href="./en/" class="nav__link nav__link--lang">EN</a></span>
+        <span class="nav__lang"><a href="./index.html" class="nav__link nav__link--active nav__link--lang">DE</a><span
+            class="nav__lang-sep">|</span><a href="./en/" class="nav__link nav__link--lang">EN</a></span>
       </nav>
     </div>
   </header>
@@ -30,15 +33,18 @@
       <div class="hero">
         <div>
           <h2 class="hero__title">Top Stories</h2>
-          <p class="hero__sub">Latest posts from Danny Declassified</p>
+          <p class="hero__sub">Neueste Beiträge von Danny Declassified</p>
         </div>
-        <div class="search">
-          <input id="searchInput" class="search__input" placeholder="Search posts…" />
+        <div class="search-row">
+          <input id="searchInput" class="search__input" placeholder="Beiträge suchen…" />
+          <button id="searchClear" class="search-clear" style="display:none" aria-label="Suche zurücksetzen">✕</button>
         </div>
       </div>
 
+      <div id="categoryNav" class="category-nav"></div>
+
       <div id="postsGrid" class="grid"></div>
-      <p id="emptyState" class="muted hidden">No posts found.</p>
+      <p id="emptyState" class="muted hidden">Keine Artikel gefunden.</p>
     </section>
 
     <aside class="sidebar">
@@ -50,8 +56,9 @@
       <div class="card">
         <h3 class="card__title">About</h3>
         <p class="muted">
-          This is a lightweight news-style portal. You can publish DOCX files via the
-          “Publish (DOCX)” page.
+          Der Autor ist einer jener Menschen, denen der Aufstieg von der
+          Arbeiterklasse in die Mittelschicht gelungen ist – und der nun
+          bemerkt, wie unterschiedlich diese beiden Welten sind.
         </p>
       </div>
     </aside>
@@ -63,4 +70,5 @@
 
   <script src="./main.js"></script>
 </body>
+
 </html>

@@ -45,18 +45,27 @@
     "title": "European Social Democracy Since 2000: Openness, Social Security, and the Price of Unequal Globalisation",
     "date": "2026-03-18",
     "category": "World",
-    "slug": "20260318-die-europ-ische-sozialdemokratie-seit-2000-ffnung-soziale-sicherung-und-der-preis-ungleicher-globalisierung"
+    "slug": "20260318-die-europ-ische-sozialdemokratie-seit-2000-ffnung-soziale-sicherung-und-der-preis-ungleicher-globalisierung",
+    "excerpt": "Social democracy didn't fail because it embraced Europe — it failed where it could no longer translate open markets into social protection.",
+    "readTime": "7 min read",
+    "subtitle": "Openness, social security, and the price of unequal globalisation"
   },
   {
     "title": "Why the Culture War Could Become So Bitter",
     "date": "2026-03-19",
     "category": "Germany",
-    "slug": "20260319-warum-der-kulturkampf-so-erbittert-werden-konnte"
+    "slug": "20260319-warum-der-kulturkampf-so-erbittert-werden-konnte",
+    "excerpt": "Economic pressure, the refugee crisis, and identity politics all contributed to Germany's bitter culture war — but none was sufficient alone.",
+    "readTime": "7 min read",
+    "subtitle": "Why economic pressure and identity conflict reinforce each other"
   },
   {
     "title": "Moralisation, Distinction, and Material Inequality",
     "date": "2026-03-20",
     "category": "Germany",
-    "slug": "20260320-moralisierung-distinktion-und-materielle-ungleichheit"
+    "slug": "20260320-moralisierung-distinktion-und-materielle-ungleichheit",
+    "excerpt": "Why privileged milieus in Germany tend towards moralisation — and how this intertwines with material inequality and social distinction.",
+    "readTime": "8 min read",
+    "subtitle": "On the political culture of privileged milieus in Germany"
   }
 ]

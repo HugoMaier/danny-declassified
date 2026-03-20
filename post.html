@@ -30,12 +30,11 @@
 
     <article class="article card">
       <header class="article__header">
-        <h2 id="postTitle" class="article__title">Loading…</h2>
+        <h2 id="postTitle" class="article__title">Lade…</h2>
+        <p id="postSubtitle" class="article__subtitle" style="display:none"></p>
 
-        <!-- Meta row incl. per-article views badge -->
         <div class="article__meta">
-          <span id="postDate" class="pill"></span>
-          <span id="postCategory" class="pill pill--ghost"></span>
+          <span id="postMeta" class="muted small"></span>
 
           <!-- Per-article views badge (hits.sh) -->
           <a id="hitsLink"
@@ -44,14 +43,19 @@
              target="_blank"
              rel="noopener"
              style="display:inline-flex; align-items:center; gap:8px;">
-            <img id="hitsBadge" alt="Views" style="height:18px;" />
+            <img id="hitsBadge" alt="Aufrufe" style="height:18px;" />
           </a>
         </div>
       </header>
 
       <div id="postBody" class="article__body">
-        <p class="muted">Loading post content…</p>
+        <p class="muted">Artikel wird geladen…</p>
       </div>
+
+      <section id="relatedArticles" class="related" style="display:none">
+        <h3 class="related__title">Ähnliche Artikel</h3>
+        <div id="relatedGrid" class="related__grid"></div>
+      </section>
     </article>
   </main>
 
@@ -61,13 +65,26 @@
       return url.searchParams.get(name);
     }
 
+    function buildMeta(...parts) {
+      return parts.filter(Boolean).join(' · ');
+    }
+
+    function escapeHtml(s) {
+      return String(s || "")
+        .replaceAll("&", "&amp;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;")
+        .replaceAll('"', "&quot;")
+        .replaceAll("'", "&#039;");
+    }
+
     async function load() {
       const slug = getParam("slug");
 
-      // If no slug, show friendly message and hide the counter badge
+      // If no slug, show message and hide counter
       if (!slug) {
-        document.getElementById("postTitle").textContent = "Missing post slug.";
-        document.getElementById("postBody").innerHTML = "<p class='muted'>Open a post from the home page.</p>";
+        document.getElementById("postTitle").textContent = "Kein Artikel-Slug angegeben.";
+        document.getElementById("postBody").innerHTML = "<p class='muted'>Öffne einen Artikel über die Startseite.</p>";
         document.getElementById("hitsLink").style.display = "none";
         return;
       }
@@ -77,15 +94,9 @@
       if (enLinkEl) enLinkEl.href = `/en/post.html?slug=${encodeURIComponent(slug)}`;
 
       // --- per-article views badge (hits.sh) ---
-      // hits.sh expects a URL-like identifier, so we use the real article URL:
       const hitKey = `hugomaier.github.io/danny-declassified/posts/${slug}.html`;
-
-      // Badge increments the counter when loaded
-      const badgeUrl = `https://hits.sh/${encodeURI(hitKey)}.svg?style=flat&label=views`;
-
-      // Stats page (optional): same but ".svg" replaced by "/"
+      const badgeUrl = `https://hits.sh/${encodeURI(hitKey)}.svg?style=flat&label=Aufrufe`;
       const statsUrl = `https://hits.sh/${encodeURI(hitKey)}/`;
-
       document.getElementById("hitsBadge").src = badgeUrl;
       document.getElementById("hitsLink").href = statsUrl;
 
@@ -95,24 +106,57 @@
       const post = posts.find(p => p.slug === slug);
 
       if (!post) {
-        document.getElementById("postTitle").textContent = "Post not found.";
-        document.getElementById("postBody").innerHTML = "<p class='muted'>This post does not exist (yet).</p>";
+        document.getElementById("postTitle").textContent = "Artikel nicht gefunden.";
+        document.getElementById("postBody").innerHTML = "<p class='muted'>Dieser Artikel existiert (noch) nicht.</p>";
         return;
       }
 
       document.title = `Danny Declassified — ${post.title}`;
       document.getElementById("postTitle").textContent = post.title;
-      document.getElementById("postDate").textContent = post.date || "";
-      document.getElementById("postCategory").textContent = post.category || "General";
 
-      // Load post body HTML
+      // Optional subtitle
+      const subtitleEl = document.getElementById("postSubtitle");
+      if (subtitleEl && post.subtitle) {
+        subtitleEl.textContent = post.subtitle;
+        subtitleEl.style.display = "";
+      }
+
+      // Combined metadata line
+      document.getElementById("postMeta").textContent =
+        buildMeta(post.category, post.date, post.readTime);
+
+      // Load post body
       const bodyRes = await fetch(`./posts/${post.slug}.html`, { cache: "no-store" });
-      const html = await bodyRes.text();
-      document.getElementById("postBody").innerHTML = html;
+      document.getElementById("postBody").innerHTML = await bodyRes.text();
+
+      // Related articles
+      const sameCat = posts
+        .filter(p => p.slug !== slug && p.category === post.category)
+        .slice(0, 3);
+      const others = posts
+        .filter(p => p.slug !== slug && p.category !== post.category)
+        .sort((a, b) => (b.date || "").localeCompare(a.date || ""));
+      const related = [...sameCat, ...others.slice(0, 3 - sameCat.length)];
+
+      if (related.length > 0) {
+        document.getElementById("relatedArticles").style.display = "";
+        const relatedGrid = document.getElementById("relatedGrid");
+        related.forEach(r => {
+          const a = document.createElement("a");
+          a.className = "card related-card";
+          a.href = `./post.html?slug=${encodeURIComponent(r.slug)}`;
+          a.innerHTML = `
+            <h4 class="related-card__title">${escapeHtml(r.title)}</h4>
+            <p class="muted small">${escapeHtml(buildMeta(r.category, r.date))}</p>
+            ${r.excerpt ? `<p class="related-card__excerpt muted small">${escapeHtml(r.excerpt)}</p>` : ""}
+          `;
+          relatedGrid.appendChild(a);
+        });
+      }
     }
 
     load().catch(err => {
-      document.getElementById("postTitle").textContent = "Error loading post.";
+      document.getElementById("postTitle").textContent = "Fehler beim Laden.";
       document.getElementById("postBody").innerHTML = `<pre>${String(err)}</pre>`;
     });
   </script>

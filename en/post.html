@@ -30,10 +30,10 @@
     <article class="article card">
       <header class="article__header">
         <h2 id="postTitle" class="article__title">Loading…</h2>
+        <p id="postSubtitle" class="article__subtitle" style="display:none"></p>
 
         <div class="article__meta">
-          <span id="postDate" class="pill"></span>
-          <span id="postCategory" class="pill pill--ghost"></span>
+          <span id="postMeta" class="muted small"></span>
 
           <!-- Per-article views badge (hits.sh) -->
           <a id="hitsLink"
@@ -50,6 +50,11 @@
       <div id="postBody" class="article__body">
         <p class="muted">Loading post content…</p>
       </div>
+
+      <section id="relatedArticles" class="related" style="display:none">
+        <h3 class="related__title">Related Articles</h3>
+        <div id="relatedGrid" class="related__grid"></div>
+      </section>
     </article>
   </main>
 
@@ -59,14 +64,23 @@
       return url.searchParams.get(name);
     }
 
+    function buildMeta(...parts) {
+      return parts.filter(Boolean).join(' · ');
+    }
+
+    function escapeHtml(s) {
+      return String(s || "")
+        .replaceAll("&", "&amp;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;")
+        .replaceAll('"', "&quot;")
+        .replaceAll("'", "&#039;");
+    }
+
     async function load() {
       const slug = getParam("slug");
 
-      // Wire DE language-switch link now that slug is known
-      const deLinkEl = document.getElementById("deLink");
-      if (slug && deLinkEl) deLinkEl.href = `../post.html?slug=${encodeURIComponent(slug)}`;
-
-      // If no slug, show friendly message and hide the counter badge
+      // If no slug, show message and hide counter
       if (!slug) {
         document.getElementById("postTitle").textContent = "Missing post slug.";
         document.getElementById("postBody").innerHTML = "<p class='muted'>Open a post from the home page.</p>";
@@ -74,13 +88,15 @@
         return;
       }
 
+      // Wire DE language-switch link now that a valid slug is confirmed
+      const deLinkEl = document.getElementById("deLink");
+      if (deLinkEl) deLinkEl.href = `../post.html?slug=${encodeURIComponent(slug)}`;
+
       // --- per-article views badge (hits.sh) ---
       // English articles use a separate key so counters are independent
       const hitKey = `hugomaier.github.io/danny-declassified/en/posts/${slug}.html`;
-
       const badgeUrl = `https://hits.sh/${encodeURI(hitKey)}.svg?style=flat&label=views`;
       const statsUrl = `https://hits.sh/${encodeURI(hitKey)}/`;
-
       document.getElementById("hitsBadge").src = badgeUrl;
       document.getElementById("hitsLink").href = statsUrl;
 
@@ -97,13 +113,46 @@
 
       document.title = `Danny Declassified — ${post.title}`;
       document.getElementById("postTitle").textContent = post.title;
-      document.getElementById("postDate").textContent = post.date || "";
-      document.getElementById("postCategory").textContent = post.category || "General";
 
-      // Load English post body HTML
+      // Optional subtitle
+      const subtitleEl = document.getElementById("postSubtitle");
+      if (subtitleEl && post.subtitle) {
+        subtitleEl.textContent = post.subtitle;
+        subtitleEl.style.display = "";
+      }
+
+      // Combined metadata line
+      document.getElementById("postMeta").textContent =
+        buildMeta(post.category, post.date, post.readTime);
+
+      // Load English post body
       const bodyRes = await fetch(`./posts/${post.slug}.html`, { cache: "no-store" });
-      const html = await bodyRes.text();
-      document.getElementById("postBody").innerHTML = html;
+      document.getElementById("postBody").innerHTML = await bodyRes.text();
+
+      // Related articles
+      const sameCat = posts
+        .filter(p => p.slug !== slug && p.category === post.category)
+        .slice(0, 3);
+      const others = posts
+        .filter(p => p.slug !== slug && p.category !== post.category)
+        .sort((a, b) => (b.date || "").localeCompare(a.date || ""));
+      const related = [...sameCat, ...others.slice(0, 3 - sameCat.length)];
+
+      if (related.length > 0) {
+        document.getElementById("relatedArticles").style.display = "";
+        const relatedGrid = document.getElementById("relatedGrid");
+        related.forEach(r => {
+          const a = document.createElement("a");
+          a.className = "card related-card";
+          a.href = `./post.html?slug=${encodeURIComponent(r.slug)}`;
+          a.innerHTML = `
+            <h4 class="related-card__title">${escapeHtml(r.title)}</h4>
+            <p class="muted small">${escapeHtml(buildMeta(r.category, r.date))}</p>
+            ${r.excerpt ? `<p class="related-card__excerpt muted small">${escapeHtml(r.excerpt)}</p>` : ""}
+          `;
+          relatedGrid.appendChild(a);
+        });
+      }
     }
 
     load().catch(err => {
