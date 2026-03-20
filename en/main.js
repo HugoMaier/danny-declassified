@@ -49,7 +49,7 @@ async function initHome() {
     list.forEach(p => grid.appendChild(postCard(p)));
     emptyState.classList.toggle("hidden", list.length !== 0);
 
-    // Trending = first 5
+    // Latest = first 5 newest posts
     trendingList.innerHTML = "";
     list.slice(0, 5).forEach(p => {
       const li = document.createElement("li");
