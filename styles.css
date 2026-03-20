@@ -330,4 +330,68 @@ body{
 @media(max-width:680px){
   .secondary-row{ grid-template-columns:1fr; }
   .post-card--hero .post-card__title{ font-size:1.15rem; }
+  .hub-nav{ grid-template-columns:1fr; }
 }
+
+/* ── Hub pages ── */
+.hub-header{ padding:28px 0 20px; border-bottom:1px solid var(--border); margin-bottom:32px; }
+.hub__title{ margin:0 0 14px; font-size:1.75rem; line-height:1.2; }
+.hub__intro{ color:var(--muted); font-size:15px; line-height:1.65; max-width:700px; margin:0; }
+
+.hub-section{ margin-bottom:44px; }
+.hub-section__title{
+  font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:.10em;
+  color:var(--muted); margin:0 0 18px; padding-bottom:8px;
+  border-bottom:1px solid var(--border);
+}
+
+/* Reading order */
+.reading-order{ list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:14px; }
+.reading-order__item{ display:flex; gap:16px; align-items:flex-start; }
+.reading-order__num{
+  flex-shrink:0; width:28px; height:28px; border-radius:50%;
+  background:rgba(106,167,255,.12); color:var(--accent);
+  font-size:12px; font-weight:700; display:grid; place-items:center;
+}
+.reading-order__link{ text-decoration:none; color:var(--text); font-weight:600; font-size:14px; line-height:1.3; }
+.reading-order__link:hover{ color:var(--accent); }
+
+/* Hub card (other dossiers section) */
+.hub-nav{ display:grid; grid-template-columns:repeat(2,1fr); gap:18px; }
+.hub-card{
+  padding:20px 22px; border-radius:var(--radius);
+  background:var(--card); border:1px solid var(--border);
+  text-decoration:none; display:flex; flex-direction:column; gap:8px;
+  transition:border-color .15s;
+}
+.hub-card:hover{ border-color:var(--accent); }
+.hub-card__title{ margin:0; font-size:1rem; font-weight:700; color:var(--text); }
+.hub-card__desc{ margin:0; color:var(--muted); font-size:13px; line-height:1.5; }
+.hub-card__cta{ font-size:12px; color:var(--accent); margin-top:auto; }
+
+/* Hub-ref on article pages */
+.hub-ref{
+  padding:14px 16px; border-left:3px solid var(--accent);
+  background:rgba(106,167,255,.05); border-radius:0 var(--radius) var(--radius) 0;
+  margin-top:24px;
+}
+.hub-ref__label{ margin:0 0 8px; font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:.08em; color:var(--muted); }
+.hub-ref__links{ display:flex; flex-wrap:wrap; gap:8px; }
+.hub-ref-link{
+  font-size:13px; color:var(--accent); text-decoration:none;
+  border:1px solid rgba(106,167,255,.3); border-radius:999px; padding:3px 10px;
+}
+.hub-ref-link:hover{ background:rgba(106,167,255,.1); }
+
+/* Dossier overview page */
+.dossier-cards{ display:flex; flex-direction:column; gap:20px; }
+.dossier-card{
+  display:block; padding:28px 28px 22px; text-decoration:none;
+  transition:border-color .15s, transform .12s;
+}
+.dossier-card:hover{ border-color:var(--accent); transform:translateY(-2px); }
+.dossier-card__num{ font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:.10em; color:var(--muted); margin:0 0 8px; }
+.dossier-card__title{ margin:0 0 10px; font-size:1.3rem; font-weight:800; color:var(--text); }
+.dossier-card__desc{ margin:0 0 10px; color:var(--muted); font-size:14px; line-height:1.6; }
+.dossier-card__meta{ font-size:12px; color:var(--muted); margin:0; }
+.dossier-card__cta{ display:inline-block; margin-top:14px; font-size:13px; color:var(--accent); font-weight:600; }

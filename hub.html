@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Danny Declassified — Dossier</title>
+  <link rel="stylesheet" href="./styles.css" />
+  <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+  <meta name="description" content="Thematisches Dossier von Danny Declassified." />
+  <meta property="og:type"  content="website" />
+  <meta property="og:title" content="Danny Declassified — Dossier" />
+  <meta property="og:url"   content="https://hugomaier.github.io/danny-declassified/hub.html" />
+</head>
+<body>
+  <div id="readProgress" class="read-progress"></div>
+  <header class="site-header">
+    <div class="wrap header-row">
+      <div class="brand">
+        <div class="brand__logo">DD</div>
+        <div>
+          <h1 class="brand__title">Danny Declassified</h1>
+          <p class="brand__tagline">Berichte, Analysen und Einordnungen.</p>
+        </div>
+      </div>
+      <nav class="nav">
+        <a href="./index.html" class="nav__link">Übersicht</a>
+        <a href="./dossiers.html" class="nav__link nav__link--active">Dossiers</a>
+        <span class="nav__lang"><a href="./index.html" class="nav__link nav__link--active nav__link--lang">DE</a><span class="nav__lang-sep">|</span><a id="enLink" href="./en/hub.html" class="nav__link nav__link--lang">EN</a></span>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap" style="padding-top:24px; padding-bottom:60px;">
+    <a class="back" href="./dossiers.html">← Alle Dossiers</a>
+
+    <div class="hub-header">
+      <h2 id="hubTitle" class="hub__title">Lade…</h2>
+      <p id="hubIntro" class="hub__intro"></p>
+    </div>
+
+    <section class="hub-section">
+      <h3 class="hub-section__title">Einstieg: Mit diesem Artikel beginnen</h3>
+      <div id="startHereCard"></div>
+    </section>
+
+    <section class="hub-section">
+      <h3 class="hub-section__title">Empfohlene Lesereihenfolge</h3>
+      <ol id="readingOrderList" class="reading-order"></ol>
+    </section>
+
+    <section class="hub-section">
+      <h3 class="hub-section__title">Alle Artikel in diesem Dossier</h3>
+      <div id="hubGrid" class="grid"></div>
+    </section>
+
+    <section class="hub-section">
+      <h3 class="hub-section__title">Weitere Dossiers</h3>
+      <div id="relatedHubs" class="hub-nav"></div>
+    </section>
+  </main>
+
+  <footer class="wrap">
+    <div class="footer">
+      <span class="muted small">© <span id="year"></span> Danny Declassified</span>
+      <nav class="footer-nav">
+        <a href="./impressum.html" class="footer-link muted small">Impressum</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  <script src="./hub.js"></script>
+  <script>
+    window.addEventListener('scroll', () => {
+      const el = document.documentElement;
+      const bar = document.getElementById('readProgress');
+      if (bar) bar.style.width = Math.min(el.scrollTop / (el.scrollHeight - el.clientHeight) * 100, 100) + '%';
+    });
+  </script>
+</body>
+</html>

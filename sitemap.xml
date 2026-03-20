@@ -110,4 +110,50 @@
     <lastmod>2026-01-05</lastmod>
   </url>
 
+  <!-- Dossier overview pages -->
+  <url>
+    <loc>https://hugomaier.github.io/danny-declassified/dossiers.html</loc>
+    <lastmod>2026-03-20</lastmod>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://hugomaier.github.io/danny-declassified/en/dossiers.html</loc>
+    <lastmod>2026-03-20</lastmod>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <!-- Thematic hub pages (DE) -->
+  <url>
+    <loc>https://hugomaier.github.io/danny-declassified/hub.html?hub=economic-pressure</loc>
+    <lastmod>2026-03-20</lastmod>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://hugomaier.github.io/danny-declassified/hub.html?hub=culture-war</loc>
+    <lastmod>2026-03-20</lastmod>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://hugomaier.github.io/danny-declassified/hub.html?hub=geopolitics</loc>
+    <lastmod>2026-03-20</lastmod>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <!-- Thematic hub pages (EN) -->
+  <url>
+    <loc>https://hugomaier.github.io/danny-declassified/en/hub.html?hub=economic-pressure</loc>
+    <lastmod>2026-03-20</lastmod>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://hugomaier.github.io/danny-declassified/en/hub.html?hub=culture-war</loc>
+    <lastmod>2026-03-20</lastmod>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://hugomaier.github.io/danny-declassified/en/hub.html?hub=geopolitics</loc>
+    <lastmod>2026-03-20</lastmod>
+    <changefreq>monthly</changefreq>
+  </url>
+
 </urlset>

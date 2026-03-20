@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Danny Declassified — Dossiers</title>
+  <link rel="stylesheet" href="./styles.css" />
+  <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+  <meta name="description" content="Drei thematische Dossiers, die Artikel zu Wirtschaftsdruck, Kulturkampf und Geopolitik bündeln." />
+  <meta property="og:type"  content="website" />
+  <meta property="og:title" content="Danny Declassified — Dossiers" />
+  <meta property="og:url"   content="https://hugomaier.github.io/danny-declassified/dossiers.html" />
+  <link rel="alternate" hreflang="de" href="https://hugomaier.github.io/danny-declassified/dossiers.html" />
+  <link rel="alternate" hreflang="en" href="https://hugomaier.github.io/danny-declassified/en/dossiers.html" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap header-row">
+      <div class="brand">
+        <div class="brand__logo">DD</div>
+        <div>
+          <h1 class="brand__title">Danny Declassified</h1>
+          <p class="brand__tagline">Berichte, Analysen und Einordnungen.</p>
+        </div>
+      </div>
+      <nav class="nav">
+        <a href="./index.html" class="nav__link">Übersicht</a>
+        <a href="./dossiers.html" class="nav__link nav__link--active">Dossiers</a>
+        <span class="nav__lang"><a href="./index.html" class="nav__link nav__link--active nav__link--lang">DE</a><span class="nav__lang-sep">|</span><a href="./en/dossiers.html" class="nav__link nav__link--lang">EN</a></span>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap" style="padding-top:32px; padding-bottom:60px;">
+    <div style="max-width:660px; margin-bottom:40px;">
+      <h2 style="margin:0 0 10px; font-size:1.7rem;">Dossiers</h2>
+      <p class="muted" style="font-size:15px; line-height:1.65;">Thematische Sammlungen, die zusammengehörende Essays zu einem Argumentationsstrang bündeln. Jedes Dossier enthält eine kurze Einführung, eine empfohlene Lesereihenfolge und alle zugehörigen Artikel.</p>
+    </div>
+
+    <div class="dossier-cards">
+      <a href="./hub.html?hub=economic-pressure" class="card dossier-card">
+        <p class="dossier-card__num">Dossier 01</p>
+        <h3 class="dossier-card__title">Wirtschaftsdruck, Migration und der Aufstieg der AfD</h3>
+        <p class="dossier-card__desc">Wie Globalisierung, EU-Erweiterung, Wohnungsknappheit und die Flüchtlingskrise zusammen den Boden für den Rechtsruck bereitet haben – und warum die Sozialdemokratie daran gescheitert ist.</p>
+        <p class="dossier-card__meta">7 Artikel</p>
+        <span class="dossier-card__cta">Zum Dossier →</span>
+      </a>
+
+      <a href="./hub.html?hub=culture-war" class="card dossier-card">
+        <p class="dossier-card__num">Dossier 02</p>
+        <h3 class="dossier-card__title">Kulturkampf, Klasse und Moralisierung</h3>
+        <p class="dossier-card__desc">Der deutsche Kulturkampf als Klassenkampf: Wie privilegierte Milieus moralische Positionierungen zur sozialen Distinktion nutzen – und was materielle Ungleichheit damit zu tun hat.</p>
+        <p class="dossier-card__meta">2 Artikel</p>
+        <span class="dossier-card__cta">Zum Dossier →</span>
+      </a>
+
+      <a href="./hub.html?hub=geopolitics" class="card dossier-card">
+        <p class="dossier-card__num">Dossier 03</p>
+        <h3 class="dossier-card__title">Deutschland in einer härteren geopolitischen Welt</h3>
+        <p class="dossier-card__desc">Strategische Abhängigkeiten, Konfliktsimulationen und die Frage gesellschaftlicher Resilienz: Deutschland ist unvorbereitet in eine härtere Welt eingetreten.</p>
+        <p class="dossier-card__meta">3 Artikel</p>
+        <span class="dossier-card__cta">Zum Dossier →</span>
+      </a>
+    </div>
+  </main>
+
+  <footer class="wrap">
+    <div class="footer">
+      <span class="muted small">© <span id="year"></span> Danny Declassified</span>
+      <nav class="footer-nav">
+        <a href="./impressum.html" class="footer-link muted small">Impressum</a>
+      </nav>
+    </div>
+  </footer>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>

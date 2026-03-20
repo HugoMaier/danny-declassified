@@ -6,7 +6,12 @@
     "slug": "20260105-welcome-to-danny-declassified",
     "subtitle": "Über einen stillen Krieg, den kaum jemand kennt",
     "excerpt": "Wie westliche Geheimdienste modernste Technologie einsetzten, um potenzielle Terrorbedrohungen zu neutralisieren – und was dabei schiefging.",
-    "readTime": "3 min Lesezeit"
+    "readTime": "3 min Lesezeit",
+    "themes": ["geopolitics"],
+    "related": [
+      "20260318-fiktives-kriegsszenario-was-ein-gro-konflikt-mit-china-russland-und-iran-f-r-deutschland-und-die-eu-bedeuten-w-rde",
+      "20260318-wie-deutschland-seine-gesellschaft-stabilisieren-und-strategisch-unabh-ngiger-werden-k-nnte"
+    ]
   },
   {
     "title": "Die Auswirkung der Globalisierung auf Arbeits- und Wohnungsmarkt",
@@ -15,7 +20,13 @@
     "slug": "20260318-die-auswirkung-der-globalisierung-auf-arbeits-und-wohnungsmarkt",
     "subtitle": "Globalisierung, Arbeitsmarkt und Wohneigentum in Deutschland",
     "excerpt": "Die Globalisierung hat Deutschland insgesamt nicht ärmer gemacht – aber sie hat Gewinne breit verteilt und Verluste scharf konzentriert.",
-    "readTime": "6 min Lesezeit"
+    "readTime": "6 min Lesezeit",
+    "themes": ["economic-pressure"],
+    "related": [
+      "20260318-die-auswirkung-der-eu-osterweiterung-auf-arbeits-und-wohnungsmarkt",
+      "20260318-der-auftieg-der-afd-im-kontext-der-entwicklung-des-arbeits-und-des-wohnungsmarktes",
+      "20260318-die-europ-ische-sozialdemokratie-seit-2000-ffnung-soziale-sicherung-und-der-preis-ungleicher-globalisierung"
+    ]
   },
   {
     "title": "Die Auswirkung der EU-Osterweiterung auf Arbeits- und Wohnungsmarkt",
@@ -24,7 +35,13 @@
     "slug": "20260318-die-auswirkung-der-eu-osterweiterung-auf-arbeits-und-wohnungsmarkt",
     "subtitle": "Gewinner, Verlierer und soziale Folgen",
     "excerpt": "Die EU-Osterweiterung hat nicht einfach Arbeitsplätze vernichtet – aber sie hat den Druck auf bestimmte Segmente des deutschen Arbeitsmarkts spürbar erhöht.",
-    "readTime": "6 min Lesezeit"
+    "readTime": "6 min Lesezeit",
+    "themes": ["economic-pressure"],
+    "related": [
+      "20260318-die-auswirkung-der-globalisierung-auf-arbeits-und-wohnungsmarkt",
+      "20260318-der-auftieg-der-afd-im-kontext-der-entwicklung-des-arbeits-und-des-wohnungsmarktes",
+      "20260318-die-europ-ische-sozialdemokratie-seit-2000-ffnung-soziale-sicherung-und-der-preis-ungleicher-globalisierung"
+    ]
   },
   {
     "title": "Der Auftieg der AfD im Kontext der Entwicklung des Arbeits- und des Wohnungsmarktes",
@@ -33,7 +50,13 @@
     "slug": "20260318-der-auftieg-der-afd-im-kontext-der-entwicklung-des-arbeits-und-des-wohnungsmarktes",
     "subtitle": "Wer die Kosten der Offenheit trägt – und wer davon profitiert",
     "excerpt": "Globalisierung und EU-Osterweiterung haben eine neue soziale Bruchlinie vertieft – und damit den Boden für den Aufstieg der extremen Rechten bereitet.",
-    "readTime": "6 min Lesezeit"
+    "readTime": "6 min Lesezeit",
+    "themes": ["economic-pressure"],
+    "related": [
+      "20260318-fl-chtlingskrise-konomischer-wandel-und-der-aufstieg-der-afd",
+      "20260318-die-auswirkung-der-globalisierung-auf-arbeits-und-wohnungsmarkt",
+      "20260319-warum-der-kulturkampf-so-erbittert-werden-konnte"
+    ]
   },
   {
     "title": "Flüchtlingskrise, ökonomischer Wandel und der Aufstieg der AfD",
@@ -42,7 +65,13 @@
     "slug": "20260318-fl-chtlingskrise-konomischer-wandel-und-der-aufstieg-der-afd",
     "subtitle": "Warum wirtschaftlicher Wandel den Boden für den Rechtsruck bereitet hat",
     "excerpt": "Die Flüchtlingskrise hat keine neue Unzufriedenheit geschaffen – sie hat eine bereits vorhandene politisch beschleunigt und sichtbar gemacht.",
-    "readTime": "6 min Lesezeit"
+    "readTime": "6 min Lesezeit",
+    "themes": ["economic-pressure"],
+    "related": [
+      "20260318-der-auftieg-der-afd-im-kontext-der-entwicklung-des-arbeits-und-des-wohnungsmarktes",
+      "20260319-warum-der-kulturkampf-so-erbittert-werden-konnte",
+      "20260318-die-auswirkung-der-eu-osterweiterung-auf-arbeits-und-wohnungsmarkt"
+    ]
   },
   {
     "title": "Fiktives Kriegsszenario: Was ein Großkonflikt mit China, Russland und Iran für Deutschland und die EU bedeuten würde",
@@ -51,7 +80,12 @@
     "slug": "20260318-fiktives-kriegsszenario-was-ein-gro-konflikt-mit-china-russland-und-iran-f-r-deutschland-und-die-eu-bedeuten-w-rde",
     "subtitle": "Was ein Großkonflikt mit China, Russland und Iran bedeuten würde",
     "excerpt": "Was würde passieren, wenn Deutschland und die EU gleichzeitig mit einem Großkonflikt mit China, Russland und Iran konfrontiert wären? Eine Analyse der realen Abhängigkeiten.",
-    "readTime": "6 min Lesezeit"
+    "readTime": "6 min Lesezeit",
+    "themes": ["geopolitics"],
+    "related": [
+      "20260318-wie-deutschland-seine-gesellschaft-stabilisieren-und-strategisch-unabh-ngiger-werden-k-nnte",
+      "20260105-welcome-to-danny-declassified"
+    ]
   },
   {
     "title": "Wie Deutschland seine Gesellschaft stabilisieren und strategisch unabhängiger werden könnte",
@@ -60,7 +94,13 @@
     "slug": "20260318-wie-deutschland-seine-gesellschaft-stabilisieren-und-strategisch-unabh-ngiger-werden-k-nnte",
     "subtitle": "Wohnraum, Aufstiegschancen und weniger strategische Abhängigkeiten",
     "excerpt": "Deutschland braucht keine Abschottung – sondern eine pragmatische Neuordnung seines Gesellschaftsvertrags unter den Bedingungen einer unsichereren Welt.",
-    "readTime": "5 min Lesezeit"
+    "readTime": "5 min Lesezeit",
+    "themes": ["geopolitics", "economic-pressure"],
+    "related": [
+      "20260318-fiktives-kriegsszenario-was-ein-gro-konflikt-mit-china-russland-und-iran-f-r-deutschland-und-die-eu-bedeuten-w-rde",
+      "20260318-die-europ-ische-sozialdemokratie-seit-2000-ffnung-soziale-sicherung-und-der-preis-ungleicher-globalisierung",
+      "20260318-der-auftieg-der-afd-im-kontext-der-entwicklung-des-arbeits-und-des-wohnungsmarktes"
+    ]
   },
   {
     "title": "Die europäische Sozialdemokratie seit 2000: Öffnung, soziale Sicherung und der Preis ungleicher Globalisierung",
@@ -69,7 +109,13 @@
     "slug": "20260318-die-europ-ische-sozialdemokratie-seit-2000-ffnung-soziale-sicherung-und-der-preis-ungleicher-globalisierung",
     "subtitle": "Öffnung, soziale Sicherung und der Preis ungleicher Globalisierung",
     "excerpt": "Die Sozialdemokratie scheiterte nicht daran, dass sie Europa umarmte – sondern dort, wo sie offene Märkte nicht mehr in sozialen Schutz übersetzen konnte.",
-    "readTime": "7 min Lesezeit"
+    "readTime": "7 min Lesezeit",
+    "themes": ["economic-pressure"],
+    "related": [
+      "20260318-die-auswirkung-der-globalisierung-auf-arbeits-und-wohnungsmarkt",
+      "20260318-der-auftieg-der-afd-im-kontext-der-entwicklung-des-arbeits-und-des-wohnungsmarktes",
+      "20260318-wie-deutschland-seine-gesellschaft-stabilisieren-und-strategisch-unabh-ngiger-werden-k-nnte"
+    ]
   },
   {
     "title": "Warum der Kulturkampf so erbittert werden konnte",
@@ -78,7 +124,13 @@
     "slug": "20260319-warum-der-kulturkampf-so-erbittert-werden-konnte",
     "subtitle": "Warum wirtschaftlicher Druck und Identitätskonflikt sich gegenseitig verstärken",
     "excerpt": "Wirtschaftsdruck, Flüchtlingskrise und Identitätspolitik haben gemeinsam den Kulturkampf befeuert – aber keiner dieser Faktoren war allein ausreichend.",
-    "readTime": "7 min Lesezeit"
+    "readTime": "7 min Lesezeit",
+    "themes": ["culture-war", "economic-pressure"],
+    "related": [
+      "20260320-moralisierung-distinktion-und-materielle-ungleichheit",
+      "20260318-fl-chtlingskrise-konomischer-wandel-und-der-aufstieg-der-afd",
+      "20260318-der-auftieg-der-afd-im-kontext-der-entwicklung-des-arbeits-und-des-wohnungsmarktes"
+    ]
   },
   {
     "title": "Moralisierung, Distinktion und materielle Ungleichheit",
@@ -87,6 +139,12 @@
     "slug": "20260320-moralisierung-distinktion-und-materielle-ungleichheit",
     "subtitle": "Zur politischen Kultur privilegierter Milieus in Deutschland",
     "excerpt": "Warum privilegierte Milieus in Deutschland zur Moralisierung neigen – und wie das mit materieller Ungleichheit und sozialer Distinktion zusammenhängt.",
-    "readTime": "8 min Lesezeit"
+    "readTime": "8 min Lesezeit",
+    "themes": ["culture-war"],
+    "related": [
+      "20260319-warum-der-kulturkampf-so-erbittert-werden-konnte",
+      "20260318-der-auftieg-der-afd-im-kontext-der-entwicklung-des-arbeits-und-des-wohnungsmarktes",
+      "20260318-fl-chtlingskrise-konomischer-wandel-und-der-aufstieg-der-afd"
+    ]
   }
 ]

@@ -27,6 +27,7 @@
 
       <nav class="nav">
         <a href="./index.html" class="nav__link">Übersicht</a>
+        <a href="./dossiers.html" class="nav__link">Dossiers</a>
         <span class="nav__lang"><a href="./index.html" class="nav__link nav__link--active nav__link--lang">DE</a><span class="nav__lang-sep">|</span><a id="enLink" href="/en/" class="nav__link nav__link--lang">EN</a></span>
       </nav>
     </div>
@@ -54,6 +55,8 @@
         <h3 class="related__title">Ähnliche Artikel</h3>
         <div id="relatedGrid" class="related__grid"></div>
       </section>
+
+      <div id="hubRef" class="hub-ref" style="display:none"></div>
 
       <div class="hits-badge">
         <a id="hitsLink" class="footer-link" href="#" target="_blank" rel="noopener">
@@ -142,14 +145,21 @@
       const bodyRes = await fetch(`./posts/${post.slug}.html`, { cache: "no-store" });
       document.getElementById("postBody").innerHTML = await bodyRes.text();
 
-      // Related articles
-      const sameCat = posts
-        .filter(p => p.slug !== slug && p.category === post.category)
-        .slice(0, 3);
-      const others = posts
-        .filter(p => p.slug !== slug && p.category !== post.category)
-        .sort((a, b) => (b.date || "").localeCompare(a.date || ""));
-      const related = [...sameCat, ...others.slice(0, 3 - sameCat.length)];
+      // Related articles — priority: explicit > theme-based > category fallback
+      const explicit = (post.related || [])
+        .map(s => posts.find(p => p.slug === s)).filter(Boolean);
+      const themeMatches = posts.filter(p =>
+        p.slug !== slug &&
+        !explicit.some(e => e.slug === p.slug) &&
+        (p.themes || []).some(t => (post.themes || []).includes(t))
+      ).sort((a, b) => (b.date || '').localeCompare(a.date || ''));
+      const catFallback = posts.filter(p =>
+        p.slug !== slug &&
+        !explicit.some(e => e.slug === p.slug) &&
+        !themeMatches.some(t => t.slug === p.slug) &&
+        p.category === post.category
+      );
+      const related = [...explicit, ...themeMatches, ...catFallback].slice(0, 3);
 
       if (related.length > 0) {
         document.getElementById("relatedArticles").style.display = "";
@@ -165,6 +175,23 @@
           `;
           relatedGrid.appendChild(a);
         });
+      }
+
+      // Hub/Dossier reference
+      const THEME_LABELS = {
+        'economic-pressure': 'Wirtschaftsdruck, Migration und der Aufstieg der AfD',
+        'culture-war': 'Kulturkampf, Klasse und Moralisierung',
+        'geopolitics': 'Deutschland in einer härteren geopolitischen Welt'
+      };
+      if (post.themes && post.themes.length > 0) {
+        const hubRefEl = document.getElementById('hubRef');
+        if (hubRefEl) {
+          const links = post.themes.map(t =>
+            `<a href="./hub.html?hub=${encodeURIComponent(t)}" class="hub-ref-link">${escapeHtml(THEME_LABELS[t] || t)}</a>`
+          ).join('');
+          hubRefEl.innerHTML = `<p class="hub-ref__label">Dieses Essay erscheint auch im Dossier</p><div class="hub-ref__links">${links}</div>`;
+          hubRefEl.style.display = '';
+        }
       }
     }
 
