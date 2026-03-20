@@ -53,6 +53,10 @@ body{
 .nav__link:hover{ border-color:var(--border); color:var(--text); }
 .nav__link--active{ background:rgba(106,167,255,.12); color:var(--text); border-color:rgba(106,167,255,.25); }
 
+.nav__lang{ display:flex; align-items:center; gap:2px; margin-left:6px; border-left:1px solid var(--border); padding-left:10px; }
+.nav__lang-sep{ color:var(--border); font-size:13px; padding:0 2px; }
+.nav__link--lang{ padding:6px 8px; font-size:13px; font-weight:600; letter-spacing:.3px; }
+
 .layout{
   display:grid;
   grid-template-columns: 1fr 320px;

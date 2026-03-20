@@ -1,10 +1,10 @@
 <!doctype html>
-<html lang="de">
+<html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Danny Declassified — Post</title>
-  <link rel="stylesheet" href="./styles.css" />
+  <title>Danny Declassified — Article</title>
+  <link rel="stylesheet" href="../styles.css" />
 </head>
 <body>
   <header class="site-header">
@@ -13,14 +13,13 @@
         <div class="brand__logo">DD</div>
         <div>
           <h1 class="brand__title">Danny Declassified</h1>
-          <p class="brand__tagline">News portal style — simple and fast.</p>
+          <p class="brand__tagline">Reports, stories, and updates — in English.</p>
         </div>
       </div>
 
       <nav class="nav">
         <a href="./index.html" class="nav__link">Home</a>
-        <a href="./admin.html" class="nav__link">Publish (DOCX)</a>
-        <span class="nav__lang"><a href="./index.html" class="nav__link nav__link--active nav__link--lang">DE</a><span class="nav__lang-sep">|</span><a id="enLink" href="/en/" class="nav__link nav__link--lang">EN</a></span>
+        <span class="nav__lang"><a id="deLink" href="../" class="nav__link nav__link--lang">DE</a><span class="nav__lang-sep">|</span><a href="./index.html" class="nav__link nav__link--active nav__link--lang">EN</a></span>
       </nav>
     </div>
   </header>
@@ -32,7 +31,6 @@
       <header class="article__header">
         <h2 id="postTitle" class="article__title">Loading…</h2>
 
-        <!-- Meta row incl. per-article views badge -->
         <div class="article__meta">
           <span id="postDate" class="pill"></span>
           <span id="postCategory" class="pill pill--ghost"></span>
@@ -64,6 +62,10 @@
     async function load() {
       const slug = getParam("slug");
 
+      // Wire DE language-switch link now that slug is known
+      const deLinkEl = document.getElementById("deLink");
+      if (slug && deLinkEl) deLinkEl.href = `../post.html?slug=${encodeURIComponent(slug)}`;
+
       // If no slug, show friendly message and hide the counter badge
       if (!slug) {
         document.getElementById("postTitle").textContent = "Missing post slug.";
@@ -72,24 +74,17 @@
         return;
       }
 
-      // Wire EN language-switch link now that a valid slug is confirmed
-      const enLinkEl = document.getElementById("enLink");
-      if (enLinkEl) enLinkEl.href = `/en/post.html?slug=${encodeURIComponent(slug)}`;
-
       // --- per-article views badge (hits.sh) ---
-      // hits.sh expects a URL-like identifier, so we use the real article URL:
-      const hitKey = `hugomaier.github.io/danny-declassified/posts/${slug}.html`;
+      // English articles use a separate key so counters are independent
+      const hitKey = `hugomaier.github.io/danny-declassified/en/posts/${slug}.html`;
 
-      // Badge increments the counter when loaded
       const badgeUrl = `https://hits.sh/${encodeURI(hitKey)}.svg?style=flat&label=views`;
-
-      // Stats page (optional): same but ".svg" replaced by "/"
       const statsUrl = `https://hits.sh/${encodeURI(hitKey)}/`;
 
       document.getElementById("hitsBadge").src = badgeUrl;
       document.getElementById("hitsLink").href = statsUrl;
 
-      // Load posts index
+      // Load English posts index
       const indexRes = await fetch("./posts/index.json", { cache: "no-store" });
       const posts = await indexRes.json();
       const post = posts.find(p => p.slug === slug);
@@ -105,7 +100,7 @@
       document.getElementById("postDate").textContent = post.date || "";
       document.getElementById("postCategory").textContent = post.category || "General";
 
-      // Load post body HTML
+      // Load English post body HTML
       const bodyRes = await fetch(`./posts/${post.slug}.html`, { cache: "no-store" });
       const html = await bodyRes.text();
       document.getElementById("postBody").innerHTML = html;
