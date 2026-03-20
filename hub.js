@@ -15,9 +15,11 @@ const HUB_DATA = {
       readingOrder: [
         '20260318-die-auswirkung-der-globalisierung-auf-arbeits-und-wohnungsmarkt',
         '20260318-die-auswirkung-der-eu-osterweiterung-auf-arbeits-und-wohnungsmarkt',
+        '20260320-deutschlands-stille-soziale-wende-1997-2006',
         '20260318-die-europ-ische-sozialdemokratie-seit-2000-ffnung-soziale-sicherung-und-der-preis-ungleicher-globalisierung',
         '20260318-fl-chtlingskrise-konomischer-wandel-und-der-aufstieg-der-afd',
         '20260318-der-auftieg-der-afd-im-kontext-der-entwicklung-des-arbeits-und-des-wohnungsmarktes',
+        '20260320-deutschlands-ungleiche-wende',
         '20260319-warum-der-kulturkampf-so-erbittert-werden-konnte',
         '20260318-wie-deutschland-seine-gesellschaft-stabilisieren-und-strategisch-unabh-ngiger-werden-k-nnte'
       ]
@@ -29,9 +31,11 @@ const HUB_DATA = {
       readingOrder: [
         '20260318-die-auswirkung-der-globalisierung-auf-arbeits-und-wohnungsmarkt',
         '20260318-die-auswirkung-der-eu-osterweiterung-auf-arbeits-und-wohnungsmarkt',
+        '20260320-deutschlands-stille-soziale-wende-1997-2006',
         '20260318-die-europ-ische-sozialdemokratie-seit-2000-ffnung-soziale-sicherung-und-der-preis-ungleicher-globalisierung',
         '20260318-fl-chtlingskrise-konomischer-wandel-und-der-aufstieg-der-afd',
         '20260318-der-auftieg-der-afd-im-kontext-der-entwicklung-des-arbeits-und-des-wohnungsmarktes',
+        '20260320-deutschlands-ungleiche-wende',
         '20260319-warum-der-kulturkampf-so-erbittert-werden-konnte',
         '20260318-wie-deutschland-seine-gesellschaft-stabilisieren-und-strategisch-unabh-ngiger-werden-k-nnte'
       ]
