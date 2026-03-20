@@ -127,7 +127,7 @@ body{
 .sidebar .list a{ color:var(--muted); text-decoration:none; }
 .sidebar .list a:hover{ color:var(--text); }
 
-.footer{ padding-bottom:40px; }
+.footer{ display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:8px; padding-bottom:40px; }
 
 .post{ max-width: 860px; }
 .back{ display:inline-block; margin: 12px 0; color:var(--muted); text-decoration:none; }
@@ -240,3 +240,10 @@ body{
   overflow:hidden;
 }
 
+/* ── Footer navigation ── */
+.footer-nav{ display:flex; gap:16px; }
+.footer-link{ color:var(--muted); text-decoration:none; font-size:13px; }
+.footer-link:hover{ color:var(--text); }
+
+/* ── Hits badge (article bottom) ── */
+.hits-badge{ display:flex; justify-content:flex-end; margin-top:20px; padding-top:16px; border-top:1px solid var(--border); }

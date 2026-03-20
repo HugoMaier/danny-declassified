@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Seite nicht gefunden — Danny Declassified</title>
+  <link rel="stylesheet" href="./styles.css" />
+  <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap header-row">
+      <div class="brand">
+        <div class="brand__logo">DD</div>
+        <div>
+          <h1 class="brand__title">Danny Declassified</h1>
+          <p class="brand__tagline">Berichte, Analysen und Einordnungen.</p>
+        </div>
+      </div>
+      <nav class="nav">
+        <a href="./index.html" class="nav__link">Home</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap post">
+    <article class="article card" style="text-align:center; padding:60px 24px;">
+      <p style="font-size:80px; margin:0; line-height:1; color:var(--muted);">404</p>
+      <h2 class="article__title" style="margin:16px 0 8px;">Seite nicht gefunden</h2>
+      <p class="muted">Diese Seite existiert nicht (mehr).</p>
+      <a href="./index.html" class="btn" style="display:inline-block; margin-top:24px; text-decoration:none;">← Zur Startseite</a>
+    </article>
+  </main>
+
+  <footer class="wrap footer">
+    <span class="muted">© <span id="year"></span> Danny Declassified</span>
+    <nav class="footer-nav"><a href="./impressum.html" class="footer-link">Impressum</a></nav>
+  </footer>
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html>

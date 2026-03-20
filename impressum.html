@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Impressum — Danny Declassified</title>
+  <link rel="stylesheet" href="./styles.css" />
+  <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap header-row">
+      <div class="brand">
+        <div class="brand__logo">DD</div>
+        <div>
+          <h1 class="brand__title">Danny Declassified</h1>
+          <p class="brand__tagline">Berichte, Analysen und Einordnungen.</p>
+        </div>
+      </div>
+      <nav class="nav">
+        <a href="./index.html" class="nav__link">Home</a>
+        <span class="nav__lang"><a href="./impressum.html" class="nav__link nav__link--active nav__link--lang">DE</a><span class="nav__lang-sep">|</span><a href="./en/impressum.html" class="nav__link nav__link--lang">EN</a></span>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap post">
+    <a class="back" href="./index.html">← Zurück zur Startseite</a>
+    <article class="article card">
+      <header class="article__header">
+        <h2 class="article__title">Impressum</h2>
+      </header>
+      <div class="article__body">
+        <h3>Angaben gemäß § 5 TMG</h3>
+        <p>Danny (Pseudonym)<br />Kontakt: <a href="https://github.com/HugoMaier/danny-declassified" style="color:var(--accent)">GitHub Repository</a></p>
+        <h3>Haftungsausschluss</h3>
+        <p>Diese Website ist nicht kommerziell und dient ausschließlich der privaten Meinungsäußerung. Die Inhalte stellen keine professionelle rechtliche, politische oder finanzielle Beratung dar.</p>
+        <h3>Urheberrecht</h3>
+        <p>Die auf dieser Website veröffentlichten Inhalte unterliegen dem deutschen Urheberrecht. Nicht genehmigte Vervielfältigung ist nicht gestattet.</p>
+      </div>
+    </article>
+  </main>
+
+  <footer class="wrap footer">
+    <span class="muted">© <span id="year"></span> Danny Declassified</span>
+    <nav class="footer-nav"><a href="./impressum.html" class="footer-link">Impressum</a></nav>
+  </footer>
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html>

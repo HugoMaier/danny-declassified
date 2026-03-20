@@ -5,6 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Danny Declassified — Post</title>
   <link rel="stylesheet" href="./styles.css" />
+  <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+  <meta name="description" content="Berichte, Analysen und Einordnungen — von Danny Declassified." />
+  <meta property="og:type"  content="article" />
+  <meta property="og:title" content="Danny Declassified" />
+  <meta property="og:url"   content="https://hugomaier.github.io/danny-declassified/post.html" />
 </head>
 <body>
   <header class="site-header">
@@ -13,13 +18,12 @@
         <div class="brand__logo">DD</div>
         <div>
           <h1 class="brand__title">Danny Declassified</h1>
-          <p class="brand__tagline">News portal style — simple and fast.</p>
+          <p class="brand__tagline">Berichte, Analysen und Einordnungen.</p>
         </div>
       </div>
 
       <nav class="nav">
         <a href="./index.html" class="nav__link">Home</a>
-        <a href="./admin.html" class="nav__link">Publish (DOCX)</a>
         <span class="nav__lang"><a href="./index.html" class="nav__link nav__link--active nav__link--lang">DE</a><span class="nav__lang-sep">|</span><a id="enLink" href="/en/" class="nav__link nav__link--lang">EN</a></span>
       </nav>
     </div>
@@ -35,16 +39,6 @@
 
         <div class="article__meta">
           <span id="postMeta" class="muted small"></span>
-
-          <!-- Per-article views badge (hits.sh) -->
-          <a id="hitsLink"
-             class="pill pill--ghost"
-             href="#"
-             target="_blank"
-             rel="noopener"
-             style="display:inline-flex; align-items:center; gap:8px;">
-            <img id="hitsBadge" alt="Aufrufe" style="height:18px;" />
-          </a>
         </div>
       </header>
 
@@ -56,10 +50,23 @@
         <h3 class="related__title">Ähnliche Artikel</h3>
         <div id="relatedGrid" class="related__grid"></div>
       </section>
+
+      <div class="hits-badge">
+        <a id="hitsLink" class="footer-link" href="#" target="_blank" rel="noopener">
+          <img id="hitsBadge" alt="Aufrufe" style="height:16px; opacity:0.5;" />
+        </a>
+      </div>
     </article>
   </main>
 
+  <footer class="wrap footer">
+    <span class="muted">© <span id="year"></span> Danny Declassified</span>
+    <nav class="footer-nav"><a href="./impressum.html" class="footer-link">Impressum</a></nav>
+  </footer>
+
   <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
     function getParam(name) {
       const url = new URL(window.location.href);
       return url.searchParams.get(name);
@@ -113,6 +120,8 @@
 
       document.title = `Danny Declassified — ${post.title}`;
       document.getElementById("postTitle").textContent = post.title;
+      document.querySelector('meta[property="og:title"]')?.setAttribute('content', post.title);
+      document.querySelector('meta[name="description"]')?.setAttribute('content', post.excerpt || post.title);
 
       // Optional subtitle
       const subtitleEl = document.getElementById("postSubtitle");
