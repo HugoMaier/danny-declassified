@@ -3,69 +3,90 @@
     "title": "Schizophrenie – Die neue Waffe im Kampf gegen den Terrorismus",
     "date": "2026-01-05",
     "category": "World",
-    "slug": "20260105-welcome-to-danny-declassified"
+    "slug": "20260105-welcome-to-danny-declassified",
+    "subtitle": "Über einen stillen Krieg, den kaum jemand kennt",
+    "excerpt": "Wie westliche Geheimdienste modernste Technologie einsetzten, um potenzielle Terrorbedrohungen zu neutralisieren – und was dabei schiefging.",
+    "readTime": "3 min Lesezeit"
   },
   {
     "title": "Die Auswirkung der Globalisierung auf Arbeits- und Wohnungsmarkt",
     "date": "2026-03-18",
     "category": "World",
-    "slug": "20260318-die-auswirkung-der-globalisierung-auf-arbeits-und-wohnungsmarkt"
+    "slug": "20260318-die-auswirkung-der-globalisierung-auf-arbeits-und-wohnungsmarkt",
+    "subtitle": "Globalisierung, Arbeitsmarkt und Wohneigentum in Deutschland",
+    "excerpt": "Die Globalisierung hat Deutschland insgesamt nicht ärmer gemacht – aber sie hat Gewinne breit verteilt und Verluste scharf konzentriert.",
+    "readTime": "6 min Lesezeit"
   },
   {
     "title": "Die Auswirkung der EU-Osterweiterung auf Arbeits- und Wohnungsmarkt",
     "date": "2026-03-18",
     "category": "World",
-    "slug": "20260318-die-auswirkung-der-eu-osterweiterung-auf-arbeits-und-wohnungsmarkt"
+    "slug": "20260318-die-auswirkung-der-eu-osterweiterung-auf-arbeits-und-wohnungsmarkt",
+    "subtitle": "Gewinner, Verlierer und soziale Folgen",
+    "excerpt": "Die EU-Osterweiterung hat nicht einfach Arbeitsplätze vernichtet – aber sie hat den Druck auf bestimmte Segmente des deutschen Arbeitsmarkts spürbar erhöht.",
+    "readTime": "6 min Lesezeit"
   },
   {
     "title": "Der Auftieg der AfD im Kontext der Entwicklung des Arbeits- und des Wohnungsmarktes",
     "date": "2026-03-18",
     "category": "World",
-    "slug": "20260318-der-auftieg-der-afd-im-kontext-der-entwicklung-des-arbeits-und-des-wohnungsmarktes"
+    "slug": "20260318-der-auftieg-der-afd-im-kontext-der-entwicklung-des-arbeits-und-des-wohnungsmarktes",
+    "subtitle": "Wer die Kosten der Offenheit trägt – und wer davon profitiert",
+    "excerpt": "Globalisierung und EU-Osterweiterung haben eine neue soziale Bruchlinie vertieft – und damit den Boden für den Aufstieg der extremen Rechten bereitet.",
+    "readTime": "6 min Lesezeit"
   },
   {
     "title": "Flüchtlingskrise, ökonomischer Wandel und der Aufstieg der AfD",
     "date": "2026-03-18",
     "category": "World",
-    "slug": "20260318-fl-chtlingskrise-konomischer-wandel-und-der-aufstieg-der-afd"
+    "slug": "20260318-fl-chtlingskrise-konomischer-wandel-und-der-aufstieg-der-afd",
+    "subtitle": "Warum wirtschaftlicher Wandel den Boden für den Rechtsruck bereitet hat",
+    "excerpt": "Die Flüchtlingskrise hat keine neue Unzufriedenheit geschaffen – sie hat eine bereits vorhandene politisch beschleunigt und sichtbar gemacht.",
+    "readTime": "6 min Lesezeit"
   },
   {
     "title": "Fiktives Kriegsszenario: Was ein Großkonflikt mit China, Russland und Iran für Deutschland und die EU bedeuten würde",
     "date": "2026-03-18",
     "category": "World",
-    "slug": "20260318-fiktives-kriegsszenario-was-ein-gro-konflikt-mit-china-russland-und-iran-f-r-deutschland-und-die-eu-bedeuten-w-rde"
+    "slug": "20260318-fiktives-kriegsszenario-was-ein-gro-konflikt-mit-china-russland-und-iran-f-r-deutschland-und-die-eu-bedeuten-w-rde",
+    "subtitle": "Was ein Großkonflikt mit China, Russland und Iran bedeuten würde",
+    "excerpt": "Was würde passieren, wenn Deutschland und die EU gleichzeitig mit einem Großkonflikt mit China, Russland und Iran konfrontiert wären? Eine Analyse der realen Abhängigkeiten.",
+    "readTime": "6 min Lesezeit"
   },
   {
     "title": "Wie Deutschland seine Gesellschaft stabilisieren und strategisch unabhängiger werden könnte",
     "date": "2026-03-18",
     "category": "World",
-    "slug": "20260318-wie-deutschland-seine-gesellschaft-stabilisieren-und-strategisch-unabh-ngiger-werden-k-nnte"
+    "slug": "20260318-wie-deutschland-seine-gesellschaft-stabilisieren-und-strategisch-unabh-ngiger-werden-k-nnte",
+    "subtitle": "Wohnraum, Aufstiegschancen und weniger strategische Abhängigkeiten",
+    "excerpt": "Deutschland braucht keine Abschottung – sondern eine pragmatische Neuordnung seines Gesellschaftsvertrags unter den Bedingungen einer unsichereren Welt.",
+    "readTime": "5 min Lesezeit"
   },
   {
     "title": "Die europäische Sozialdemokratie seit 2000: Öffnung, soziale Sicherung und der Preis ungleicher Globalisierung",
     "date": "2026-03-18",
     "category": "World",
     "slug": "20260318-die-europ-ische-sozialdemokratie-seit-2000-ffnung-soziale-sicherung-und-der-preis-ungleicher-globalisierung",
+    "subtitle": "Öffnung, soziale Sicherung und der Preis ungleicher Globalisierung",
     "excerpt": "Die Sozialdemokratie scheiterte nicht daran, dass sie Europa umarmte – sondern dort, wo sie offene Märkte nicht mehr in sozialen Schutz übersetzen konnte.",
-    "readTime": "7 min Lesezeit",
-    "subtitle": "Öffnung, soziale Sicherung und der Preis ungleicher Globalisierung"
+    "readTime": "7 min Lesezeit"
   },
   {
     "title": "Warum der Kulturkampf so erbittert werden konnte",
     "date": "2026-03-19",
     "category": "Germany",
     "slug": "20260319-warum-der-kulturkampf-so-erbittert-werden-konnte",
+    "subtitle": "Warum wirtschaftlicher Druck und Identitätskonflikt sich gegenseitig verstärken",
     "excerpt": "Wirtschaftsdruck, Flüchtlingskrise und Identitätspolitik haben gemeinsam den Kulturkampf befeuert – aber keiner dieser Faktoren war allein ausreichend.",
-    "readTime": "7 min Lesezeit",
-    "subtitle": "Warum wirtschaftlicher Druck und Identitätskonflikt sich gegenseitig verstärken"
+    "readTime": "7 min Lesezeit"
   },
   {
     "title": "Moralisierung, Distinktion und materielle Ungleichheit",
     "date": "2026-03-20",
     "category": "Germany",
     "slug": "20260320-moralisierung-distinktion-und-materielle-ungleichheit",
+    "subtitle": "Zur politischen Kultur privilegierter Milieus in Deutschland",
     "excerpt": "Warum privilegierte Milieus in Deutschland zur Moralisierung neigen – und wie das mit materieller Ungleichheit und sozialer Distinktion zusammenhängt.",
-    "readTime": "8 min Lesezeit",
-    "subtitle": "Zur politischen Kultur privilegierter Milieus in Deutschland"
+    "readTime": "8 min Lesezeit"
   }
 ]
