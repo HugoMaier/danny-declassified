@@ -14,34 +14,51 @@ function escapeHtml(s) {
     .replaceAll("'", "&#039;");
 }
 
+function formatDate(str, locale) {
+  const d = new Date(str + 'T12:00:00');
+  return isNaN(d.getTime()) ? str : d.toLocaleDateString(locale, {
+    year: 'numeric', month: 'long', day: 'numeric'
+  });
+}
+
+function catSlug(cat) {
+  return (cat || '').toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '');
+}
+
 async function loadPosts() {
   const res = await fetch("./posts/index.json", { cache: "no-store" });
   return res.json();
 }
 
-function postCard(post) {
+function postCard(post, size, isNew) {
+  size = size || 'regular';
+  isNew = !!isNew;
   const a = document.createElement("a");
-  a.className = "card post-card";
+  const cat = post.category || '';
+  const cs = catSlug(cat);
+  a.className = `card post-card post-card--${size} cat-${cs}`;
   a.href = `./post.html?slug=${encodeURIComponent(post.slug)}`;
 
-  const meta = buildMeta(post.date, post.category, post.readTime);
+  const dateStr = formatDate(post.date, 'de-DE');
+  const meta = buildMeta(dateStr, post.readTime);
   const excerptHtml = post.excerpt
     ? `<p class="post-card__excerpt muted small">${escapeHtml(post.excerpt)}</p>`
     : "";
+  const newBadge = isNew ? `<span class="badge-new">NEU</span>` : '';
+  const catPill = cat ? `<span class="cat-pill cat-pill--${cs}">${escapeHtml(cat)}</span>` : '';
 
   a.innerHTML = `
-    <div>
-      <h3 class="post-card__title">${escapeHtml(post.title)}</h3>
-      <p class="muted small">${escapeHtml(meta)}</p>
-      ${excerptHtml}
-    </div>
+    <div class="post-card__cat-row">${catPill}${newBadge}</div>
+    <h3 class="post-card__title">${escapeHtml(post.title)}</h3>
+    ${excerptHtml}
+    <p class="muted small">${escapeHtml(meta)}</p>
   `;
   return a;
 }
 
 async function initHome() {
-  const grid = document.getElementById("postsGrid");
-  if (!grid) return;
+  const postsGrid = document.getElementById("postsGrid");
+  if (!postsGrid) return;
 
   const emptyState = document.getElementById("emptyState");
   const trendingList = document.getElementById("trendingList");
@@ -72,6 +89,51 @@ async function initHome() {
     });
   }
 
+  function updateTrending() {
+    trendingList.innerHTML = "";
+    posts.slice(0, 5).forEach(p => {
+      const li = document.createElement("li");
+      li.innerHTML = `<a href="./post.html?slug=${encodeURIComponent(p.slug)}">${escapeHtml(p.title)}</a>`;
+      trendingList.appendChild(li);
+    });
+  }
+
+  function render(list) {
+    postsGrid.innerHTML = "";
+    emptyState.classList.toggle("hidden", list.length !== 0);
+    updateTrending();
+    if (list.length === 0) return;
+
+    const isFiltered = activeCategory !== "Alle" || searchInput.value.trim() !== "";
+
+    if (!isFiltered) {
+      // Hero card (most recent article)
+      postsGrid.appendChild(postCard(list[0], 'hero', true));
+
+      // Secondary row (2nd–4th articles)
+      if (list.length > 1) {
+        const row = document.createElement("div");
+        row.className = "secondary-row";
+        list.slice(1, 4).forEach(p => row.appendChild(postCard(p, 'secondary', false)));
+        postsGrid.appendChild(row);
+      }
+
+      // Regular grid (5th article onwards)
+      if (list.length > 4) {
+        const g = document.createElement("div");
+        g.className = "grid";
+        list.slice(4).forEach(p => g.appendChild(postCard(p, 'regular', false)));
+        postsGrid.appendChild(g);
+      }
+    } else {
+      // Filtered view: plain grid
+      const g = document.createElement("div");
+      g.className = "grid";
+      list.forEach(p => g.appendChild(postCard(p, 'regular', false)));
+      postsGrid.appendChild(g);
+    }
+  }
+
   function applyFilters() {
     const q = searchInput.value.trim().toLowerCase();
     const filtered = posts.filter(p => {
@@ -86,22 +148,7 @@ async function initHome() {
     if (searchClear) searchClear.style.display = q ? "inline-flex" : "none";
   }
 
-  function render(list) {
-    grid.innerHTML = "";
-    list.forEach(p => grid.appendChild(postCard(p)));
-    emptyState.classList.toggle("hidden", list.length !== 0);
-
-    // Neueste = die 5 neuesten Beiträge
-    trendingList.innerHTML = "";
-    posts.slice(0, 5).forEach(p => {
-      const li = document.createElement("li");
-      li.innerHTML = `<a href="./post.html?slug=${encodeURIComponent(p.slug)}">${escapeHtml(p.title)}</a>`;
-      trendingList.appendChild(li);
-    });
-  }
-
   render(posts);
-
   searchInput.addEventListener("input", applyFilters);
 
   if (searchClear) {
@@ -115,6 +162,15 @@ async function initHome() {
       }
       applyFilters();
     });
+  }
+
+  // Scroll-to-top button
+  const scrollTopBtn = document.getElementById("scrollTop");
+  if (scrollTopBtn) {
+    window.addEventListener("scroll", () =>
+      scrollTopBtn.classList.toggle("visible", window.scrollY > 400));
+    scrollTopBtn.addEventListener("click", () =>
+      window.scrollTo({ top: 0, behavior: "smooth" }));
   }
 }
 

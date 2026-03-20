@@ -14,6 +14,7 @@
   <link rel="alternate" hreflang="en" href="https://hugomaier.github.io/danny-declassified/en/post.html" />
 </head>
 <body>
+  <div id="readProgress" class="read-progress"></div>
   <header class="site-header">
     <div class="wrap header-row">
       <div class="brand">
@@ -187,6 +188,13 @@
           setTimeout(() => { btn.textContent = "↗ Teilen"; btn.classList.remove("share-btn--copied"); }, 1800);
         }
       } catch(e) { /* user cancelled */ }
+    });
+    // Reading progress bar
+    window.addEventListener('scroll', () => {
+      const el = document.documentElement;
+      const pct = el.scrollTop / (el.scrollHeight - el.clientHeight) * 100;
+      const bar = document.getElementById('readProgress');
+      if (bar) bar.style.width = Math.min(pct, 100) + '%';
     });
   </script>
 </body>
