@@ -25,7 +25,7 @@
     "related": [
       "20260318-die-auswirkung-der-eu-osterweiterung-auf-arbeits-und-wohnungsmarkt",
       "20260318-der-auftieg-der-afd-im-kontext-der-entwicklung-des-arbeits-und-des-wohnungsmarktes",
-      "20260318-die-europ-ische-sozialdemokratie-seit-2000-ffnung-soziale-sicherung-und-der-preis-ungleicher-globalisierung"
+      "20260320-deutschlands-stille-soziale-wende-1997-2006"
     ]
   },
   {
@@ -55,7 +55,7 @@
     "related": [
       "20260318-fl-chtlingskrise-konomischer-wandel-und-der-aufstieg-der-afd",
       "20260318-die-auswirkung-der-globalisierung-auf-arbeits-und-wohnungsmarkt",
-      "20260319-warum-der-kulturkampf-so-erbittert-werden-konnte"
+      "20260320-deutschlands-ungleiche-wende"
     ]
   },
   {
@@ -145,6 +145,36 @@
       "20260319-warum-der-kulturkampf-so-erbittert-werden-konnte",
       "20260318-der-auftieg-der-afd-im-kontext-der-entwicklung-des-arbeits-und-des-wohnungsmarktes",
       "20260318-fl-chtlingskrise-konomischer-wandel-und-der-aufstieg-der-afd"
+    ]
+  },
+  {
+    "title": "Deutschlands stille soziale Wende, 1997–2006",
+    "date": "2026-03-20",
+    "category": "Germany",
+    "slug": "20260320-deutschlands-stille-soziale-wende-1997-2006",
+    "subtitle": "Wohnen, Arbeitslosigkeit, Privatisierung und Agenda 2010 im Jahrzehnt rund um die Euro-Bargeldeinführung",
+    "excerpt": "Die Jahre rund um die Euro-Bargeldeinführung veränderten Deutschland leiser: durch eine Mietergesellschaft, den Verkauf öffentlicher Wohnungsbestände, hohe Arbeitslosigkeit und eine Sozialstaatsreform, die Sicherheit an Konditionalität knüpfte.",
+    "readTime": "8 min Lesezeit",
+    "themes": ["economic-pressure"],
+    "related": [
+      "20260318-die-auswirkung-der-globalisierung-auf-arbeits-und-wohnungsmarkt",
+      "20260318-die-europ-ische-sozialdemokratie-seit-2000-ffnung-soziale-sicherung-und-der-preis-ungleicher-globalisierung",
+      "20260320-deutschlands-ungleiche-wende"
+    ]
+  },
+  {
+    "title": "Deutschlands ungleiche Wende: Ost, West und die sozialen Wurzeln der AfD",
+    "date": "2026-03-20",
+    "category": "Germany",
+    "slug": "20260320-deutschlands-ungleiche-wende",
+    "subtitle": "Der Aufstieg der AfD als kumulativer Prozess aus materieller Unsicherheit und Repräsentationsdefizit",
+    "excerpt": "Der Aufstieg der AfD lässt sich nicht mit einem einzigen Motiv erklären. Er wurde von einem längeren sozialen Wandel vorbereitet – und der Osten gab dieser Politik ihre schärfste Form.",
+    "readTime": "9 min Lesezeit",
+    "themes": ["economic-pressure"],
+    "related": [
+      "20260318-der-auftieg-der-afd-im-kontext-der-entwicklung-des-arbeits-und-des-wohnungsmarktes",
+      "20260318-fl-chtlingskrise-konomischer-wandel-und-der-aufstieg-der-afd",
+      "20260320-deutschlands-stille-soziale-wende-1997-2006"
     ]
   }
 ]
