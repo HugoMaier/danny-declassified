@@ -1,5 +1,21 @@
 [
   {
+    "title": "Kontrafaktisches Szenario: Wie hätte sich die Globalisierung für Deutschland und die EU entwickelt, wenn China sich reziproker verhalten hätte?",
+    "date": "2026-03-24",
+    "category": "Wirtschaft",
+    "slug": "20260324-kontrafaktisches-szenario-globalisierung-deutschland-eu-china",
+    "subtitle": "Öffnung ist nicht dasselbe wie Reziprozität",
+    "excerpt": "Wie hätte sich China, Deutschland und die EU entwickelt, wenn Chinas Aufstieg weniger exportgetrieben und weniger preisaggressiv verlaufen wäre? Eine evidenzgestützte Gedankenübung.",
+    "readTime": "7 min Lesezeit",
+    "isNew": true,
+    "themes": ["economic-pressure", "geopolitics"],
+    "related": [
+      "20260318-die-auswirkung-der-globalisierung-auf-arbeits-und-wohnungsmarkt",
+      "20260318-fiktives-kriegsszenario-was-ein-gro-konflikt-mit-china-russland-und-iran-f-r-deutschland-und-die-eu-bedeuten-w-rde",
+      "20260318-wie-deutschland-seine-gesellschaft-stabilisieren-und-strategisch-unabh-ngiger-werden-k-nnte"
+    ]
+  },
+  {
     "title": "Rente mit 70? Warum die soziale Wirklichkeit gegen eine einfache Antwort spricht",
     "date": "2026-03-22",
     "category": "Germany",
@@ -7,7 +23,6 @@
     "subtitle": "Lebenserwartung, Schichtarbeit und die ungleiche Last längerer Lebensarbeitszeit",
     "excerpt": "Wer Rentenpolitik mit Durchschnittswerten macht, übersieht, dass Arbeiter, Geringverdiener und Schichtbeschäftigte im Durchschnitt früher sterben – und schlechtere Chancen auf Wiedereinstellung haben.",
     "readTime": "9 min Lesezeit",
-    "isNew": true,
     "themes": [],
     "related": [
       "20260320-deutschlands-stille-soziale-wende-1997-2006",
@@ -23,7 +38,6 @@
     "subtitle": "Zwei plausible Szenarien für das Jahr 2036",
     "excerpt": "Software-Agenten, humanoide Roboter und geopolitische Rivalitäten: Was passiert, wenn man die Richtung der letzten zehn Jahre in die nächsten zehn fortschreibt?",
     "readTime": "10 min Lesezeit",
-    "isNew": true,
     "themes": ["geopolitics"],
     "related": [
       "20260318-fiktives-kriegsszenario-was-ein-gro-konflikt-mit-china-russland-und-iran-f-r-deutschland-und-die-eu-bedeuten-w-rde",

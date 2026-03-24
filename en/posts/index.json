@@ -1,5 +1,21 @@
 [
   {
+    "title": "Counterfactual Scenario: How Would Globalization Have Developed for Germany and the EU if China Had Behaved More Reciprocally?",
+    "date": "2026-03-24",
+    "category": "Economy",
+    "slug": "20260324-kontrafaktisches-szenario-globalisierung-deutschland-eu-china",
+    "subtitle": "Openness is not the same thing as reciprocity",
+    "excerpt": "How would China, Germany, and the EU have developed if China's rise had been less export-driven and less price-aggressive? An evidence-based thought experiment.",
+    "readTime": "7 min read",
+    "isNew": true,
+    "themes": ["economic-pressure", "geopolitics"],
+    "related": [
+      "20260318-die-auswirkung-der-globalisierung-auf-arbeits-und-wohnungsmarkt",
+      "20260318-fiktives-kriegsszenario-was-ein-gro-konflikt-mit-china-russland-und-iran-f-r-deutschland-und-die-eu-bedeuten-w-rde",
+      "20260318-wie-deutschland-seine-gesellschaft-stabilisieren-und-strategisch-unabh-ngiger-werden-k-nnte"
+    ]
+  },
+  {
     "title": "Retirement at 70? Why Germany's Social Reality Argues Against a Simple Answer",
     "date": "2026-03-22",
     "category": "Germany",
@@ -7,7 +23,6 @@
     "subtitle": "Life expectancy, shift work, and the unequal burden of longer working lives",
     "excerpt": "Pension policy based on averages overlooks the fact that manual workers, low earners, and shift workers die younger on average — and face much worse re-hiring odds.",
     "readTime": "9 min read",
-    "isNew": true,
     "themes": [],
     "related": [
       "20260320-deutschlands-stille-soziale-wende-1997-2006",
@@ -23,7 +38,6 @@
     "subtitle": "Two plausible 2036 scenarios",
     "excerpt": "Software agents, humanoid robots, and geopolitical rivalry: what happens if we project the direction of the last ten years into the next ten?",
     "readTime": "10 min read",
-    "isNew": true,
     "themes": ["geopolitics"],
     "related": [
       "20260318-fiktives-kriegsszenario-was-ein-gro-konflikt-mit-china-russland-und-iran-f-r-deutschland-und-die-eu-bedeuten-w-rde",

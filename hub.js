@@ -20,8 +20,9 @@ const HUB_DATA = {
         '20260318-fl-chtlingskrise-konomischer-wandel-und-der-aufstieg-der-afd',
         '20260318-der-auftieg-der-afd-im-kontext-der-entwicklung-des-arbeits-und-des-wohnungsmarktes',
         '20260320-deutschlands-ungleiche-wende',
+        '20260318-wie-deutschland-seine-gesellschaft-stabilisieren-und-strategisch-unabh-ngiger-werden-k-nnte',
         '20260319-warum-der-kulturkampf-so-erbittert-werden-konnte',
-        '20260318-wie-deutschland-seine-gesellschaft-stabilisieren-und-strategisch-unabh-ngiger-werden-k-nnte'
+        '20260324-kontrafaktisches-szenario-globalisierung-deutschland-eu-china'
       ]
     },
     en: {
@@ -36,8 +37,9 @@ const HUB_DATA = {
         '20260318-fl-chtlingskrise-konomischer-wandel-und-der-aufstieg-der-afd',
         '20260318-der-auftieg-der-afd-im-kontext-der-entwicklung-des-arbeits-und-des-wohnungsmarktes',
         '20260320-deutschlands-ungleiche-wende',
+        '20260318-wie-deutschland-seine-gesellschaft-stabilisieren-und-strategisch-unabh-ngiger-werden-k-nnte',
         '20260319-warum-der-kulturkampf-so-erbittert-werden-konnte',
-        '20260318-wie-deutschland-seine-gesellschaft-stabilisieren-und-strategisch-unabh-ngiger-werden-k-nnte'
+        '20260324-kontrafaktisches-szenario-globalisierung-deutschland-eu-china'
       ]
     }
   },
@@ -70,7 +72,8 @@ const HUB_DATA = {
         '20260318-fiktives-kriegsszenario-was-ein-gro-konflikt-mit-china-russland-und-iran-f-r-deutschland-und-die-eu-bedeuten-w-rde',
         '20260318-wie-deutschland-seine-gesellschaft-stabilisieren-und-strategisch-unabh-ngiger-werden-k-nnte',
         '20260321-die-naechsten-zehn-jahre-ki-und-robotik',
-        '20260105-welcome-to-danny-declassified'
+        '20260105-welcome-to-danny-declassified',
+        '20260324-kontrafaktisches-szenario-globalisierung-deutschland-eu-china'
       ]
     },
     en: {
@@ -81,7 +84,8 @@ const HUB_DATA = {
         '20260318-fiktives-kriegsszenario-was-ein-gro-konflikt-mit-china-russland-und-iran-f-r-deutschland-und-die-eu-bedeuten-w-rde',
         '20260318-wie-deutschland-seine-gesellschaft-stabilisieren-und-strategisch-unabh-ngiger-werden-k-nnte',
         '20260321-die-naechsten-zehn-jahre-ki-und-robotik',
-        '20260105-welcome-to-danny-declassified'
+        '20260105-welcome-to-danny-declassified',
+        '20260324-kontrafaktisches-szenario-globalisierung-deutschland-eu-china'
       ]
     }
   }
