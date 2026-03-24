@@ -34,8 +34,8 @@
 
   {
     "title": "The Impact of Globalisation on the Labour and Housing Market",
-    "date": "2026-03-18",
-    "category": "World",
+    "date": "2026-01-19",
+    "category": "Economy",
     "slug": "20260318-die-auswirkung-der-globalisierung-auf-arbeits-und-wohnungsmarkt",
     "subtitle": "Globalisation, the labour market, and home ownership in Germany",
     "excerpt": "Globalisation did not simply make Germany poorer — but it distributed gains broadly while concentrating losses sharply on specific groups.",
@@ -49,8 +49,8 @@
   },
   {
     "title": "The Impact of EU Eastern Enlargement on the Labour and Housing Market",
-    "date": "2026-03-18",
-    "category": "World",
+    "date": "2026-02-02",
+    "category": "Economy",
     "slug": "20260318-die-auswirkung-der-eu-osterweiterung-auf-arbeits-und-wohnungsmarkt",
     "subtitle": "Winners, losers, and social consequences",
     "excerpt": "EU Eastern Enlargement did not simply destroy jobs — but it noticeably increased pressure on certain segments of the German labour market.",
@@ -64,8 +64,8 @@
   },
   {
     "title": "The Rise of the AfD in the Context of Labour and Housing Market Developments",
-    "date": "2026-03-18",
-    "category": "World",
+    "date": "2026-03-02",
+    "category": "Economy",
     "slug": "20260318-der-auftieg-der-afd-im-kontext-der-entwicklung-des-arbeits-und-des-wohnungsmarktes",
     "subtitle": "Who bears the costs of openness — and who benefits",
     "excerpt": "Globalisation and EU Eastern Enlargement deepened a new social fault line — and in doing so prepared the ground for the rise of the far right.",
@@ -79,8 +79,8 @@
   },
   {
     "title": "The Refugee Crisis, Economic Change, and the Rise of the AfD",
-    "date": "2026-03-18",
-    "category": "World",
+    "date": "2026-02-23",
+    "category": "Economy",
     "slug": "20260318-fl-chtlingskrise-konomischer-wandel-und-der-aufstieg-der-afd",
     "subtitle": "Why economic change prepared the ground for the political shift to the right",
     "excerpt": "The refugee crisis did not create new discontent — it politically accelerated and made visible discontent that was already there.",
@@ -94,8 +94,8 @@
   },
   {
     "title": "A Fictional War Scenario: What a Major Conflict with China, Russia, and Iran Would Mean for Germany and the EU",
-    "date": "2026-03-18",
-    "category": "World",
+    "date": "2026-03-12",
+    "category": "Geopolitics",
     "slug": "20260318-fiktives-kriegsszenario-was-ein-gro-konflikt-mit-china-russland-und-iran-f-r-deutschland-und-die-eu-bedeuten-w-rde",
     "subtitle": "What a major conflict with China, Russia, and Iran would mean",
     "excerpt": "What would happen if Germany and the EU were simultaneously confronted with a major conflict involving China, Russia, and Iran? An analysis of real dependencies.",
@@ -103,13 +103,14 @@
     "themes": ["geopolitics"],
     "related": [
       "20260318-wie-deutschland-seine-gesellschaft-stabilisieren-und-strategisch-unabh-ngiger-werden-k-nnte",
-      "20260321-die-naechsten-zehn-jahre-ki-und-robotik"
+      "20260321-die-naechsten-zehn-jahre-ki-und-robotik",
+      "20260105-welcome-to-danny-declassified"
     ]
   },
   {
     "title": "How Germany Could Stabilise Its Society and Become More Strategically Independent",
-    "date": "2026-03-18",
-    "category": "World",
+    "date": "2026-03-16",
+    "category": "Geopolitics",
     "slug": "20260318-wie-deutschland-seine-gesellschaft-stabilisieren-und-strategisch-unabh-ngiger-werden-k-nnte",
     "subtitle": "Housing, opportunities for upward mobility, and fewer strategic dependencies",
     "excerpt": "Germany does not need closure — it needs a pragmatic reordering of its social contract under the conditions of a more insecure world.",
@@ -123,8 +124,8 @@
   },
   {
     "title": "European Social Democracy Since 2000: Openness, Social Security, and the Price of Unequal Globalisation",
-    "date": "2026-03-18",
-    "category": "World",
+    "date": "2026-02-16",
+    "category": "Economy",
     "slug": "20260318-die-europ-ische-sozialdemokratie-seit-2000-ffnung-soziale-sicherung-und-der-preis-ungleicher-globalisierung",
     "subtitle": "Openness, social security, and the price of unequal globalisation",
     "excerpt": "Social democracy didn't fail because it embraced Europe — it failed where it could no longer translate open markets into social protection.",
@@ -138,7 +139,7 @@
   },
   {
     "title": "Why the Culture War Could Become So Bitter",
-    "date": "2026-03-19",
+    "date": "2026-03-18",
     "category": "Germany",
     "slug": "20260319-warum-der-kulturkampf-so-erbittert-werden-konnte",
     "subtitle": "Why economic pressure and identity conflict reinforce each other",
@@ -168,7 +169,7 @@
   },
   {
     "title": "Germany's Uneven Turn: East, West, and the Social Roots of the AfD",
-    "date": "2026-03-21",
+    "date": "2026-03-09",
     "category": "Germany",
     "slug": "20260320-deutschlands-ungleiche-wende",
     "subtitle": "The rise of the AfD as a cumulative process of material insecurity and representation deficit",
@@ -184,7 +185,7 @@
   },
   {
     "title": "Germany's Quiet Social Turning Point, 1997–2006",
-    "date": "2026-03-21",
+    "date": "2026-02-09",
     "category": "Germany",
     "slug": "20260320-deutschlands-stille-soziale-wende-1997-2006",
     "subtitle": "Housing, unemployment, privatization, and Agenda 2010 in the decade around the euro cash changeover",
@@ -196,6 +197,21 @@
       "20260318-die-auswirkung-der-globalisierung-auf-arbeits-und-wohnungsmarkt",
       "20260318-die-europ-ische-sozialdemokratie-seit-2000-ffnung-soziale-sicherung-und-der-preis-ungleicher-globalisierung",
       "20260320-deutschlands-ungleiche-wende"
+    ]
+  },
+  {
+    "title": "Schizophrenia – The New Weapon in the Fight Against Terrorism",
+    "date": "2026-01-05",
+    "category": "Geopolitics",
+    "slug": "20260105-welcome-to-danny-declassified",
+    "subtitle": "On a quiet war that hardly anyone knows about",
+    "excerpt": "How Western intelligence agencies used cutting-edge technology to neutralise potential terrorist threats — and what went wrong along the way.",
+    "readTime": "3 min read",
+    "themes": ["geopolitics"],
+    "related": [
+      "20260318-fiktives-kriegsszenario-was-ein-gro-konflikt-mit-china-russland-und-iran-f-r-deutschland-und-die-eu-bedeuten-w-rde",
+      "20260318-wie-deutschland-seine-gesellschaft-stabilisieren-und-strategisch-unabh-ngiger-werden-k-nnte",
+      "20260321-die-naechsten-zehn-jahre-ki-und-robotik"
     ]
   }
 ]
