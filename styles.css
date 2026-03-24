@@ -13,6 +13,9 @@
   --cat-germany:#4a90d9;
   --cat-world:#e6a817;
   --cat-politics:#e87040;
+  --cat-wirtschaft:#e6a024;
+  --cat-geopolitik:#e0607a;
+  --cat-technology:#7c6fff;
 }
 
 *{box-sizing:border-box}
@@ -281,9 +284,14 @@ body{
 }
 
 /* ── Category colour borders ── */
-.cat-germany { border-left:3px solid var(--cat-germany);  }
-.cat-world   { border-left:3px solid var(--cat-world);    }
-.cat-politics{ border-left:3px solid var(--cat-politics); }
+.cat-germany  { border-left:3px solid var(--cat-germany);    }
+.cat-world    { border-left:3px solid var(--cat-world);      }
+.cat-politics { border-left:3px solid var(--cat-politics);   }
+.cat-wirtschaft  { border-left:3px solid var(--cat-wirtschaft); }
+.cat-economy     { border-left:3px solid var(--cat-wirtschaft); }
+.cat-geopolitik  { border-left:3px solid var(--cat-geopolitik); }
+.cat-geopolitics { border-left:3px solid var(--cat-geopolitik); }
+.cat-technology  { border-left:3px solid var(--cat-technology); }
 
 /* ── Category pill above title ── */
 .post-card__cat-row{
@@ -294,9 +302,14 @@ body{
   text-transform:uppercase; letter-spacing:.06em;
   padding:2px 7px; border-radius:4px;
 }
-.cat-pill--germany { background:rgba(74,144,217,.15);  color:var(--cat-germany);  }
-.cat-pill--world   { background:rgba(230,168,23,.15);  color:var(--cat-world);    }
-.cat-pill--politics{ background:rgba(232,112,64,.15);  color:var(--cat-politics); }
+.cat-pill--germany    { background:rgba(74,144,217,.15);  color:var(--cat-germany);    }
+.cat-pill--world      { background:rgba(230,168,23,.15);  color:var(--cat-world);      }
+.cat-pill--politics   { background:rgba(232,112,64,.15);  color:var(--cat-politics);   }
+.cat-pill--wirtschaft { background:rgba(230,160,36,.15);  color:var(--cat-wirtschaft); }
+.cat-pill--economy    { background:rgba(230,160,36,.15);  color:var(--cat-wirtschaft); }
+.cat-pill--geopolitik { background:rgba(224,96,122,.15);  color:var(--cat-geopolitik); }
+.cat-pill--geopolitics{ background:rgba(224,96,122,.15);  color:var(--cat-geopolitik); }
+.cat-pill--technology { background:rgba(124,111,255,.15); color:var(--cat-technology); }
 
 /* ── NEU / NEW badge ── */
 .badge-new{

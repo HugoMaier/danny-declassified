@@ -69,7 +69,8 @@ const HUB_DATA = {
       readingOrder: [
         '20260318-fiktives-kriegsszenario-was-ein-gro-konflikt-mit-china-russland-und-iran-f-r-deutschland-und-die-eu-bedeuten-w-rde',
         '20260318-wie-deutschland-seine-gesellschaft-stabilisieren-und-strategisch-unabh-ngiger-werden-k-nnte',
-        '20260321-die-naechsten-zehn-jahre-ki-und-robotik'
+        '20260321-die-naechsten-zehn-jahre-ki-und-robotik',
+        '20260105-welcome-to-danny-declassified'
       ]
     },
     en: {
@@ -79,7 +80,8 @@ const HUB_DATA = {
       readingOrder: [
         '20260318-fiktives-kriegsszenario-was-ein-gro-konflikt-mit-china-russland-und-iran-f-r-deutschland-und-die-eu-bedeuten-w-rde',
         '20260318-wie-deutschland-seine-gesellschaft-stabilisieren-und-strategisch-unabh-ngiger-werden-k-nnte',
-        '20260321-die-naechsten-zehn-jahre-ki-und-robotik'
+        '20260321-die-naechsten-zehn-jahre-ki-und-robotik',
+        '20260105-welcome-to-danny-declassified'
       ]
     }
   }

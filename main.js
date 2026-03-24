@@ -44,7 +44,8 @@ function postCard(post, size, isNew) {
   const excerptHtml = post.excerpt
     ? `<p class="post-card__excerpt muted small">${escapeHtml(post.excerpt)}</p>`
     : "";
-  const newBadge = isNew ? `<span class="badge-new">NEU</span>` : '';
+  const badgeLabel = window.location.pathname.includes('/en/') ? 'NEW' : 'NEU';
+  const newBadge = isNew ? `<span class="badge-new">${badgeLabel}</span>` : '';
   const catPill = cat ? `<span class="cat-pill cat-pill--${cs}">${escapeHtml(cat)}</span>` : '';
 
   a.innerHTML = `
