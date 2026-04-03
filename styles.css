@@ -147,6 +147,15 @@ body{
   line-height:1.7;
 }
 .article__body h1, .article__body h2, .article__body h3{ margin-top:18px; }
+.article__body blockquote{
+  margin:0 0 18px;
+  padding:14px 18px;
+  border-left:3px solid var(--accent);
+  background:rgba(106,167,255,.05);
+  border-radius:0 var(--radius) var(--radius) 0;
+  color:var(--muted);
+  font-style:italic;
+}
 .article__body img{ max-width:100%; border-radius:12px; border:1px solid var(--border); }
 
 .form{ display:flex; flex-direction:column; gap:10px; }
@@ -287,6 +296,7 @@ body{
 .cat-germany  { border-left:3px solid var(--cat-germany);    }
 .cat-world    { border-left:3px solid var(--cat-world);      }
 .cat-politics { border-left:3px solid var(--cat-politics);   }
+.cat-politik  { border-left:3px solid var(--cat-politics);   }
 .cat-wirtschaft  { border-left:3px solid var(--cat-wirtschaft); }
 .cat-economy     { border-left:3px solid var(--cat-wirtschaft); }
 .cat-geopolitik  { border-left:3px solid var(--cat-geopolitik); }
@@ -305,6 +315,7 @@ body{
 .cat-pill--germany    { background:rgba(74,144,217,.15);  color:var(--cat-germany);    }
 .cat-pill--world      { background:rgba(230,168,23,.15);  color:var(--cat-world);      }
 .cat-pill--politics   { background:rgba(232,112,64,.15);  color:var(--cat-politics);   }
+.cat-pill--politik    { background:rgba(232,112,64,.15);  color:var(--cat-politics);   }
 .cat-pill--wirtschaft { background:rgba(230,160,36,.15);  color:var(--cat-wirtschaft); }
 .cat-pill--economy    { background:rgba(230,160,36,.15);  color:var(--cat-wirtschaft); }
 .cat-pill--geopolitik { background:rgba(224,96,122,.15);  color:var(--cat-geopolitik); }
