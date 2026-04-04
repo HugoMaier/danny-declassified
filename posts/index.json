@@ -1,5 +1,21 @@
 [
   {
+    "title": "Können religiöse Vorstellungen die ethische Entwicklung behindern? Warum sozialer Egoismus nicht das Ende der Moral sein muss",
+    "date": "2026-04-04",
+    "category": "Politik",
+    "slug": "20260404-religioese-vorstellungen-ethische-entwicklung",
+    "subtitle": "Warum sozialer Egoismus nicht das Ende der Moral sein muss, sondern ihr realistischer Anfang sein kann",
+    "excerpt": "Wenn Gottesbilder menschliche Schwächen spiegeln und das Selbst sozialer ist als Moralideale annehmen – wo beginnt dann ethische Entwicklung wirklich?",
+    "readTime": "10 min Lesezeit",
+    "isNew": true,
+    "themes": [],
+    "related": [
+      "20260319-warum-der-kulturkampf-so-erbittert-werden-konnte",
+      "20260320-moralisierung-distinktion-und-materielle-ungleichheit",
+      "20260403-autoritaer-vs-liberale-rechtsstaatliche-demokratie"
+    ]
+  },
+  {
     "title": "Autoritär oder liberal-rechtsstaatlich? Warum die liberale Demokratie trotz aller Mühen die stärkere Staatsform ist",
     "date": "2026-04-03",
     "category": "Politik",
@@ -23,6 +39,7 @@
     "subtitle": "Öffnung ist nicht dasselbe wie Reziprozität",
     "excerpt": "Wie hätte sich China, Deutschland und die EU entwickelt, wenn Chinas Aufstieg weniger exportgetrieben und weniger preisaggressiv verlaufen wäre? Eine evidenzgestützte Gedankenübung.",
     "readTime": "7 min Lesezeit",
+    "isNew": true,
     "themes": ["economic-pressure", "geopolitics"],
     "related": [
       "20260318-die-auswirkung-der-globalisierung-auf-arbeits-und-wohnungsmarkt",
