@@ -50,7 +50,8 @@ const HUB_DATA = {
       startHere: '20260319-warum-der-kulturkampf-so-erbittert-werden-konnte',
       readingOrder: [
         '20260319-warum-der-kulturkampf-so-erbittert-werden-konnte',
-        '20260320-moralisierung-distinktion-und-materielle-ungleichheit'
+        '20260320-moralisierung-distinktion-und-materielle-ungleichheit',
+        '20260404-religioese-vorstellungen-ethische-entwicklung'
       ]
     },
     en: {
@@ -59,7 +60,8 @@ const HUB_DATA = {
       startHere: '20260319-warum-der-kulturkampf-so-erbittert-werden-konnte',
       readingOrder: [
         '20260319-warum-der-kulturkampf-so-erbittert-werden-konnte',
-        '20260320-moralisierung-distinktion-und-materielle-ungleichheit'
+        '20260320-moralisierung-distinktion-und-materielle-ungleichheit',
+        '20260404-religioese-vorstellungen-ethische-entwicklung'
       ]
     }
   },
