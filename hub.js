@@ -75,7 +75,8 @@ const HUB_DATA = {
         '20260318-wie-deutschland-seine-gesellschaft-stabilisieren-und-strategisch-unabh-ngiger-werden-k-nnte',
         '20260321-die-naechsten-zehn-jahre-ki-und-robotik',
         '20260105-welcome-to-danny-declassified',
-        '20260324-kontrafaktisches-szenario-globalisierung-deutschland-eu-china'
+        '20260324-kontrafaktisches-szenario-globalisierung-deutschland-eu-china',
+        '20260412-was-deutschland-und-die-eu-von-china-lernen-koennten'
       ]
     },
     en: {
@@ -87,7 +88,8 @@ const HUB_DATA = {
         '20260318-wie-deutschland-seine-gesellschaft-stabilisieren-und-strategisch-unabh-ngiger-werden-k-nnte',
         '20260321-die-naechsten-zehn-jahre-ki-und-robotik',
         '20260105-welcome-to-danny-declassified',
-        '20260324-kontrafaktisches-szenario-globalisierung-deutschland-eu-china'
+        '20260324-kontrafaktisches-szenario-globalisierung-deutschland-eu-china',
+        '20260412-was-deutschland-und-die-eu-von-china-lernen-koennten'
       ]
     }
   }

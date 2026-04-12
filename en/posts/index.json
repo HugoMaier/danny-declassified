@@ -1,5 +1,37 @@
 [
   {
+    "title": "Germany's Long Struggle with Bureaucracy",
+    "date": "2026-04-13",
+    "category": "Germany",
+    "slug": "20260413-buerokratieabbau-deutschland-vergangenheit-gegenwart-zukunft",
+    "subtitle": "The Past, Present, and Future of Cutting Red Tape",
+    "excerpt": "Bureaucracy reduction has worked better than its reputation suggests — but the broader compliance burden keeps growing. Why a different architecture of the state is needed.",
+    "readTime": "8 min read",
+    "isNew": true,
+    "themes": [],
+    "related": [
+      "20260320-deutschlands-ungleiche-wende",
+      "20260318-wie-deutschland-seine-gesellschaft-stabilisieren-und-strategisch-unabh-ngiger-werden-k-nnte",
+      "20260409-energiepolitik-lernen-von-nachbarn"
+    ]
+  },
+  {
+    "title": "What Germany and the EU Could Actually Learn from China",
+    "date": "2026-04-12",
+    "category": "Geopolitics",
+    "slug": "20260412-was-deutschland-und-die-eu-von-china-lernen-koennten",
+    "subtitle": "Speed, Scale, and State Capacity — but Not Market Distortion",
+    "excerpt": "Europe often makes two mistakes at once when it comes to China. The sober answer: yes, we can learn — but we should not copy the unfair parts.",
+    "readTime": "11 min read",
+    "isNew": true,
+    "themes": ["geopolitics"],
+    "related": [
+      "20260324-kontrafaktisches-szenario-globalisierung-deutschland-eu-china",
+      "20260318-fiktives-kriegsszenario-was-ein-gro-konflikt-mit-china-russland-und-iran-f-r-deutschland-und-die-eu-bedeuten-w-rde",
+      "20260318-wie-deutschland-seine-gesellschaft-stabilisieren-und-strategisch-unabh-ngiger-werden-k-nnte"
+    ]
+  },
+  {
     "title": "What Germany Can Learn in Energy Policy from Its Neighbors",
     "date": "2026-04-09",
     "category": "Economy",
@@ -23,7 +55,7 @@
     "subtitle": "Why social egoism may not be the end of morality, but rather its realistic beginning",
     "excerpt": "If images of God mirror human weaknesses and the self is more social than moral ideals assume — where does ethical development actually begin?",
     "readTime": "10 min read",
-    "isNew": true,
+    "isNew": false,
     "themes": ["culture-war"],
     "related": [
       "20260319-warum-der-kulturkampf-so-erbittert-werden-konnte",
@@ -39,7 +71,7 @@
     "subtitle": "Why liberal democracy remains the stronger form of government despite all its burdens",
     "excerpt": "Speed does not determine good government — reliability, capacity to learn, and protection against arbitrariness do. Why liberal democracy remains the stronger form of government in the long run.",
     "readTime": "9 min read",
-    "isNew": true,
+    "isNew": false,
     "themes": [],
     "related": [
       "20260318-fiktives-kriegsszenario-was-ein-gro-konflikt-mit-china-russland-und-iran-f-r-deutschland-und-die-eu-bedeuten-w-rde",
@@ -55,7 +87,7 @@
     "subtitle": "Openness is not the same thing as reciprocity",
     "excerpt": "How would China, Germany, and the EU have developed if China's rise had been less export-driven and less price-aggressive? An evidence-based thought experiment.",
     "readTime": "7 min read",
-    "isNew": true,
+    "isNew": false,
     "themes": ["economic-pressure", "geopolitics"],
     "related": [
       "20260318-die-auswirkung-der-globalisierung-auf-arbeits-und-wohnungsmarkt",

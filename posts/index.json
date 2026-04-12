@@ -1,5 +1,37 @@
 [
   {
+    "title": "Deutschlands langer Kampf mit der Bürokratie",
+    "date": "2026-04-13",
+    "category": "Germany",
+    "slug": "20260413-buerokratieabbau-deutschland-vergangenheit-gegenwart-zukunft",
+    "subtitle": "Vergangenheit, Gegenwart und Zukunft des Bürokratieabbaus",
+    "excerpt": "Der Bürokratieabbau hat besser funktioniert, als sein Ruf vermuten lässt – aber der breitere Erfüllungsaufwand wächst. Warum eine andere Staatsarchitektur nötig ist.",
+    "readTime": "12 min Lesezeit",
+    "isNew": true,
+    "themes": [],
+    "related": [
+      "20260320-deutschlands-ungleiche-wende",
+      "20260318-wie-deutschland-seine-gesellschaft-stabilisieren-und-strategisch-unabh-ngiger-werden-k-nnte",
+      "20260409-energiepolitik-lernen-von-nachbarn"
+    ]
+  },
+  {
+    "title": "Was Deutschland und die EU tatsächlich von China lernen könnten",
+    "date": "2026-04-12",
+    "category": "Geopolitik",
+    "slug": "20260412-was-deutschland-und-die-eu-von-china-lernen-koennten",
+    "subtitle": "Geschwindigkeit, Skalierung und Staatskapazität – aber nicht die Marktverzerrung",
+    "excerpt": "Europa macht bei China oft zwei Fehler zugleich. Die nüchterne Antwort: Ja, wir können lernen – aber gerade nicht die unfairen Teile übernehmen.",
+    "readTime": "16 min Lesezeit",
+    "isNew": true,
+    "themes": ["geopolitics"],
+    "related": [
+      "20260324-kontrafaktisches-szenario-globalisierung-deutschland-eu-china",
+      "20260318-fiktives-kriegsszenario-was-ein-gro-konflikt-mit-china-russland-und-iran-f-r-deutschland-und-die-eu-bedeuten-w-rde",
+      "20260318-wie-deutschland-seine-gesellschaft-stabilisieren-und-strategisch-unabh-ngiger-werden-k-nnte"
+    ]
+  },
+  {
     "title": "Was Deutschland in der Energiepolitik von seinen Nachbarn lernen kann",
     "date": "2026-04-09",
     "category": "Wirtschaft",
@@ -23,7 +55,7 @@
     "subtitle": "Warum sozialer Egoismus nicht das Ende der Moral sein muss, sondern ihr realistischer Anfang sein kann",
     "excerpt": "Wenn Gottesbilder menschliche Schwächen spiegeln und das Selbst sozialer ist als Moralideale annehmen – wo beginnt dann ethische Entwicklung wirklich?",
     "readTime": "10 min Lesezeit",
-    "isNew": true,
+    "isNew": false,
     "themes": ["culture-war"],
     "related": [
       "20260319-warum-der-kulturkampf-so-erbittert-werden-konnte",
@@ -39,7 +71,7 @@
     "subtitle": "Warum die liberale Demokratie trotz aller Mühen die stärkere Staatsform ist",
     "excerpt": "Nicht Geschwindigkeit entscheidet über gute Regierung, sondern Verlässlichkeit, Lernfähigkeit und Schutz vor Willkür. Warum die liberale Demokratie langfristig die stärkere Staatsform bleibt.",
     "readTime": "9 min Lesezeit",
-    "isNew": true,
+    "isNew": false,
     "themes": [],
     "related": [
       "20260318-fiktives-kriegsszenario-was-ein-gro-konflikt-mit-china-russland-und-iran-f-r-deutschland-und-die-eu-bedeuten-w-rde",
@@ -55,7 +87,7 @@
     "subtitle": "Öffnung ist nicht dasselbe wie Reziprozität",
     "excerpt": "Wie hätte sich China, Deutschland und die EU entwickelt, wenn Chinas Aufstieg weniger exportgetrieben und weniger preisaggressiv verlaufen wäre? Eine evidenzgestützte Gedankenübung.",
     "readTime": "7 min Lesezeit",
-    "isNew": true,
+    "isNew": false,
     "themes": ["economic-pressure", "geopolitics"],
     "related": [
       "20260318-die-auswirkung-der-globalisierung-auf-arbeits-und-wohnungsmarkt",
